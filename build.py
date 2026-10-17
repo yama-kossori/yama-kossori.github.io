@@ -47,6 +47,7 @@ CAT_PAGES = [("release", "リリース"), ("live", "ライブ・ツアー"), ("t
 
 esc = html.escape
 MV = json.load(open(os.path.join(ROOT, "data", "mv.json"), encoding="utf-8"))
+MAGS = sorted(json.load(open(os.path.join(ROOT, "data", "magazines.json"), encoding="utf-8")), key=lambda e: e["date"])  # 公式 X で告知された雑誌・Web インタビュー
 SETLISTS = json.load(open(os.path.join(ROOT, "data", "setlists.json"), encoding="utf-8"))  # setlist.fm から（ファン投稿）
 SL_ID = {x["sfid"]: x for x in SETLISTS}
 OFFICIAL = []  # 公式のセットリスト告知（見つかったら data/official_setlists.json に足す）
@@ -239,8 +240,8 @@ def timeline(events, by_year=True):
 
 YEARS = sorted({e["date"][:4] for e in T})
 
-NAV = [("index.html", "部屋トップ"), ("timeline.html", "全部の年表"), ("era/hajimari.html", "歌ってみた時代"), ("covers.html", "歌ってみた"),
-       ("release.html", "リリース"), ("live.html", "ライブ"), ("tieup.html", "タイアップ"), ("mv.html", "MV"),
+NAV = [("index.html", "部屋トップ"), ("timeline.html", "全部の年表"), ("era/hajimari.html", "歌ってみた時代"), ("covers.html", "歌ってみた"), ("magazines.html", "雑誌インタビュー"),
+       ("release.html", "リリース"), ("live.html", "ライブ"), ("tieup.html", "タイアップ"), ("mv.html", "MV"), ("x.html", "公式Xまとめ"),
        ("schedule.html", "これからの予定"), ("about.html", "この部屋について")]
 
 CSS = """
@@ -360,12 +361,15 @@ def sidebar():
     return f"""<aside class="side">
 <div class="box"><h2>🫧 この部屋について</h2><p class="note">yama さんを応援する有志がこっそりつくった<b>非公式</b>の年表サイトです。2018年の歌ってみたから今までの歩みを、毎月のできごとごとに書き足していきます。公式とは関係ありません。</p></div>
 <div class="box"><h2>🎤 歌ってみた</h2><p class="note">YouTube の歌ってみた（カバー）を投稿順にまとめました。</p><ul><li><a href="{{R}}covers.html">歌ってみた まとめ（{sum(1 for k in MV if k.startswith("cover:"))} 曲）</a></li></ul></div>
+<div class="box"><h2>📚 雑誌インタビュー</h2><p class="note">雑誌・Web のインタビューや対談など、公式 X で告知された掲載をまとめました。</p><ul><li><a href="{{R}}magazines.html">雑誌インタビュー まとめ（{len(MAGS)} 件）</a></li></ul></div>
+<div class="box"><h2>🐦 公式Xまとめ</h2><p class="note">デビュー・リリース・ツアーなど節目の公式ポストを、X の埋め込みで並べました。</p><ul><li><a href="{{R}}x.html">公式Xまとめ（{sum(1 for e in T if e.get("x"))} 件）</a></li></ul></div>
 <div class="box"><h2>🗺 時代でたどる</h2><ul>{eras}</ul></div>
 <div class="box sticky"><h2>📅 年でたどる</h2><ul>{years}</ul>
 <h2 style="margin-top:14px">📣 公式はこちら</h2><ul>
 <li><a href="https://yamaofficial.com/" rel="noopener" target="_blank">yama 公式サイト</a></li>
 <li><a href="https://www.youtube.com/channel/UClbieOB_NYcY9TlIthmyw-A" rel="noopener" target="_blank">公式 YouTube チャンネル</a></li>
 <li><a href="https://x.com/douhwe" rel="noopener" target="_blank">yama さんの X（@douhwe）</a></li>
+<li><a href="https://x.com/yama_official0" rel="noopener" target="_blank">yama staff の X（@yama_official0）</a></li>
 <li><a href="https://www.sonymusic.co.jp/artist/yama/" rel="noopener" target="_blank">ソニーミュージック アーティストページ</a></li>
 <li><a href="https://member.yamaofficial.jp/" rel="noopener" target="_blank">ファンクラブ CLUB yama</a></li></ul></div>
 </aside>"""
@@ -561,6 +565,48 @@ def build():
 {"".join(blocks)}''', crumb=["歌ってみた まとめ"])
 
     # 予定
+    # 公式 X まとめ
+    xs = [e for e in T if e.get("x")][::-1]
+    cards = "".join(f'<div><h3>{fmt(e["date"])}｜{esc(e["title"])}</h3>{x_embed(e["x"])}</div>' for e in xs)
+    page("x.html", "公式Xまとめ", "yama さん・yama staff の公式 X から、デビュー・リリース・ツアーなど節目のポストを埋め込みでまとめました。",
+         '<section><h1>公式Xまとめ</h1><p class="lead">デビュー・リリース・ツアーなど節目のポストを、X の埋め込みで新しい順に並べています。最新の情報は '
+         '<a href="https://x.com/douhwe" target="_blank" rel="noopener">@douhwe</a> と '
+         '<a href="https://x.com/yama_official0" target="_blank" rel="noopener">@yama_official0</a> をご覧ください。</p></section>'
+         f'<section><div class="xgrid">{cards}</div></section>', crumb=["公式Xまとめ"])
+
+    # 雑誌インタビュー
+    KC = {"表紙・巻頭": "#e0457b", "表紙": "#e0457b", "インタビュー": "#2563eb", "対談": "#8b5cf6", "特集": "#ca8a04",
+          "ライブレポート": "#16a34a", "Web インタビュー": "#0891b2"}
+    myears = sorted({e["date"][:4] for e in MAGS})
+    mblocks = []
+    for y in myears:
+        cards = []
+        for e in [x for x in MAGS if x["date"][:4] == y]:
+            grp = "web" if e["kind"].startswith("Web") or not e["on_sale"] else "print"
+            dl = ("発売 " if e["on_sale"] else "公式 X で告知 ") + fmt(e["date"])
+            btns = "".join(f'<button class="xbtn" data-x="{esc(u)}">{"yama さんのポスト" if "douhwe" in u else "yama staff のポスト"}を表示</button>' for u in e["x"])
+            cards.append(f'<div class="c" data-g="{grp}"><span class="k" style="--c:{KC.get(e["kind"], "#475569")}">{esc(e["kind"])}</span>'
+                         f'<div class="mz">{esc(e["magazine"])}</div><div class="is">{esc(e["issue"])}</div><div class="dt2">{dl}</div>'
+                         f'<p>{esc(e["note"])}</p>{btns}<div class="xwrap"></div></div>')
+        mblocks.append(f'<section class="yb"><h2 class="yr" id="m{y}">{y}年 <small style="font-size:14px;color:var(--sub)">{len(cards)} 件</small></h2><div class="mg">{"".join(cards)}</div></section>')
+    n_print = sum(1 for e in MAGS if e["on_sale"])
+    n_mag = len({e["magazine"] for e in MAGS})
+    jump = " ".join(f'<a href="#m{y}">{y}</a>' for y in myears)
+    page("magazines.html", "雑誌インタビュー", f"yama さんの雑誌・Web のインタビューや対談 {len(MAGS)} 件を、yama さん・yama staff の公式 X の告知からまとめました。",
+         f'''<section><h1>雑誌インタビュー</h1><p class="lead">yama さん（@douhwe）と yama staff（@yama_official0）の公式 X で告知された、雑誌・Web メディアのインタビューや対談をまとめました。ボタンを押すと、その公式ポストが X の埋め込みで表示されます。記事・誌面の内容は各メディアでお楽しみください。</p>
+<div class="stats"><div><b>{len(MAGS)}</b>掲載</div><div><b>{n_print}</b>雑誌（紙）</div><div><b>{n_mag}</b>媒体</div><div><b>{myears[0]}〜{myears[-1]}</b>年</div></div>
+<div class="flt"><button class="on" data-f="all">すべて</button><button data-f="print">雑誌（紙）</button><button data-f="web">Web</button></div>
+<p style="margin:10px 0 0;font-size:14px">年へジャンプ: {jump}</p>
+<p class="notice" style="margin-top:12px">yama さんは顔を出さずに活動しているため、雑誌の表紙はまだ少なめです。発売日は公式の告知に書かれた日付、「公式 X で告知」は告知ポストの日付です。見つかりしだい毎月書き足します。</p></section>
+{"".join(mblocks)}
+<script>document.querySelectorAll('.flt button').forEach(function(b){{b.onclick=function(){{document.querySelectorAll('.flt button').forEach(function(x){{x.classList.toggle('on',x===b)}});var f=b.dataset.f;
+document.querySelectorAll('.mg .c').forEach(function(c){{c.style.display=(f==='all'||c.dataset.g===f)?'':'none'}});
+document.querySelectorAll('.yb').forEach(function(s){{s.style.display=[].some.call(s.querySelectorAll('.c'),function(c){{return c.style.display!=='none'}})?'':'none'}})}}}});
+document.querySelectorAll('.xbtn').forEach(function(b){{b.onclick=function(){{var w=b.parentNode.querySelector('.xwrap');if(b.dataset.done){{return}}b.dataset.done=1;b.textContent='表示しました';
+var d=document.createElement('div');d.className='xpost';d.innerHTML='<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true"><a href="'+b.dataset.x+'"></a></blockquote>';w.appendChild(d);
+function go(){{window.twttr&&twttr.widgets?twttr.widgets.load(d):setTimeout(go,300)}}if(!window.__tw){{window.__tw=1;var s=document.createElement('script');s.src='https://platform.twitter.com/widgets.js';s.async=true;document.body.appendChild(s)}}go()}}}});</script>''',
+         crumb=["雑誌インタビュー"])
+
     page("schedule.html", "これからの予定", "yama さんのこれからのライブ・リリース・テレビ出演などの予定。毎週更新。",
          '<section><h1>これからの予定</h1><p class="lead">ライブ・リリース・放送・チケットの予定をまとめています。</p></section>'
          + upcoming_box(80, "予定一覧", more=False), crumb=["これからの予定"])

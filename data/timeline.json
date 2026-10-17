@@ -204,7 +204,8 @@
   "big": true,
   "videos": [
    "春を告げる"
-  ]
+  ],
+  "x": "https://x.com/douhwe/status/1250802863019667456"
  },
  {
   "date": "2020-05-26",
@@ -254,7 +255,8 @@
   "big": true,
   "videos": [
    "live:クリーム（Versus the night）"
-  ]
+  ],
+  "x": "https://x.com/douhwe/status/1302897734949548032"
  },
  {
   "date": "2020-10-15",
@@ -274,7 +276,8 @@
   "big": true,
   "videos": [
    "真っ白"
-  ]
+  ],
+  "x": "https://x.com/douhwe/status/1318563415120510976"
  },
  {
   "date": "2021-01-11",
@@ -308,7 +311,8 @@
   "big": true,
   "videos": [
    "麻痺"
-  ]
+  ],
+  "x": "https://x.com/douhwe/status/1359491340925497354"
  },
  {
   "date": "2021-02-22",
@@ -364,7 +368,8 @@
   "cat": "live",
   "title": "「JAPAN JAM 2021」に出演",
   "note": "千葉県・LOTUS STAGE at 千葉市蘇我スポーツ公園。",
-  "big": false
+  "big": false,
+  "x": "https://x.com/douhwe/status/1388801732495347715"
  },
  {
   "date": "2021-05-04",
@@ -440,7 +445,8 @@
   "big": true,
   "videos": [
    "ランニングアウト"
-  ]
+  ],
+  "x": "https://x.com/douhwe/status/1432913137217409028"
  },
  {
   "date": "2021-09-24",
@@ -510,7 +516,8 @@
   "videos": [
    "live:春を告げる（ライブ映像）",
    "live:麻痺（ライブ映像）"
-  ]
+  ],
+  "x": "https://x.com/douhwe/status/1408446285204451340"
  },
  {
   "date": "2021-10-11",
@@ -546,7 +553,8 @@
    "Oz.",
    "世界は美しいはずなんだ",
    "スモーキーヒロイン"
-  ]
+  ],
+  "x": "https://x.com/douhwe/status/1453312912785764355"
  },
  {
   "date": "2021-12-18",
@@ -706,7 +714,8 @@
   "big": true,
   "videos": [
    "くびったけ"
-  ]
+  ],
+  "x": "https://x.com/douhwe/status/1552857318353936386"
  },
  {
   "date": "2022-08-06",
@@ -730,7 +739,8 @@
   "big": true,
   "videos": [
    "Lost"
-  ]
+  ],
+  "x": "https://x.com/douhwe/status/1564832802184785920"
  },
  {
   "date": "2022-09-01",
@@ -804,7 +814,8 @@
    "live:色彩（“the meaning of life“ TOUR 2022 at Zepp DiverCity 2022.10.8）",
    "live:くびったけ（“the meaning of life“ TOUR 2022 at Zepp DiverCity 2022.10.8）",
    "live:ライカ（“the meaning of life“ TOUR 2022 at Zepp DiverCity 2022.10.8）"
-  ]
+  ],
+  "x": "https://x.com/douhwe/status/1527277215016435714"
  },
  {
   "date": "2022-09-13",
@@ -824,7 +835,8 @@
   "big": true,
   "videos": [
    "色彩"
-  ]
+  ],
+  "x": "https://x.com/douhwe/status/1576791715268112384"
  },
  {
   "date": "2022-10-15",
@@ -853,6 +865,14 @@
   "title": "「ABEMA SONIC 2022」に出演",
   "note": "東京都・豊洲PIT。",
   "big": false
+ },
+ {
+  "date": "2022-10-29",
+  "cat": "media",
+  "title": "「MUSIC FAIR」に初出演",
+  "note": "",
+  "big": false,
+  "x": "https://x.com/douhwe/status/1586331722647363584"
  },
  {
   "date": "2022-11-03",
@@ -995,7 +1015,8 @@
   "big": true,
   "videos": [
    "slash"
-  ]
+  ],
+  "x": "https://x.com/douhwe/status/1656158555119157248"
  },
  {
   "date": "2023-04-15",
@@ -1043,7 +1064,8 @@
   ],
   "videos": [
    "live:新星（acoustic live tour 2023 “夜と閃き“ at GORILLA HALL OSAKA）"
-  ]
+  ],
+  "x": "https://x.com/douhwe/status/1655081963416608768"
  },
  {
   "date": "2023-05-13",
@@ -1327,7 +1349,8 @@
     "place": "台湾・新北",
     "venue": "Zepp New Taipei"
    }
-  ]
+  ],
+  "x": "https://x.com/douhwe/status/1729521791083921646"
  },
  {
   "date": "2023-12-13",
@@ -1389,7 +1412,8 @@
   "big": true,
   "videos": [
    "偽顔"
-  ]
+  ],
+  "x": "https://x.com/douhwe/status/1749966214053716151"
  },
  {
   "date": "2024-01-26",
@@ -1520,7 +1544,8 @@
   ],
   "videos": [
    "live:色彩（the meaning of life）"
-  ]
+  ],
+  "x": "https://x.com/douhwe/status/1792159079168897283"
  },
  {
   "date": "2024-02-28",
@@ -1655,7 +1680,8 @@
     "place": "東京都",
     "venue": "Zepp Haneda"
    }
-  ]
+  ],
+  "x": "https://x.com/douhwe/status/1836707899516837963"
  },
  {
   "date": "2024-10-31",
@@ -1730,7 +1756,8 @@
   "big": true,
   "videos": [
    "semicolon"
-  ]
+  ],
+  "x": "https://x.com/douhwe/status/1896945776544362774"
  },
  {
   "date": "2025-03-09",
@@ -1804,7 +1831,8 @@
     "place": "東京都",
     "venue": "Zepp Haneda"
    }
-  ]
+  ],
+  "x": "https://x.com/douhwe/status/1898637112842293710"
  },
  {
   "date": "2025-04-19",
@@ -1977,7 +2005,8 @@
     "place": "香港",
     "venue": "MacPherson Stadium"
    }
-  ]
+  ],
+  "x": "https://x.com/douhwe/status/1977018229806842050"
  },
  {
   "date": "2025-10-22",
@@ -1987,7 +2016,8 @@
   "big": false,
   "videos": [
    "マジカルシンドローム"
-  ]
+  ],
+  "x": "https://x.com/yama_official0/status/1980589893811073164"
  },
  {
   "date": "2025-10-29",
@@ -2047,7 +2077,8 @@
   "big": false,
   "videos": [
    "アダルトチックチルドレン"
-  ]
+  ],
+  "x": "https://x.com/douhwe/status/2002000532928626949"
  },
  {
   "date": "2025-12-19",
@@ -2081,7 +2112,8 @@
   "cat": "live",
   "title": "「huez 15th anniversary presents「ENTERTAINMENT」vol.03」に出演",
   "note": "東京都・Spotify O-EAST。",
-  "big": false
+  "big": false,
+  "x": "https://x.com/douhwe/status/2025524947905601920"
  },
  {
   "date": "2026-03",
@@ -2101,7 +2133,8 @@
   "big": true,
   "videos": [
    "蛹"
-  ]
+  ],
+  "x": "https://x.com/douhwe/status/2034312357837689226"
  },
  {
   "date": "2026-03-22",
@@ -2165,7 +2198,8 @@
     "place": "東京都",
     "venue": "Zepp Haneda"
    }
-  ]
+  ],
+  "x": "https://x.com/douhwe/status/2049763812040228908"
  },
  {
   "date": "2026-06-07",
@@ -2262,7 +2296,8 @@
   "cat": "live",
   "title": "「25th ANNIVERSARY SUMMER SONIC 2026」に出演",
   "note": "千葉県・Spotify Stage at SUMMER SONIC 2026会場 [ZOZOマリンスタジアム / 幕張メッセ]。",
-  "big": false
+  "big": false,
+  "x": "https://x.com/douhwe/status/2047527555503374781"
  },
  {
   "date": "2026-08-21",
@@ -2319,6 +2354,7 @@
     "place": "オーストラリア・シドニー",
     "venue": "Liberty Hall"
    }
-  ]
+  ],
+  "x": "https://x.com/douhwe/status/2110249351520116772"
  }
 ]

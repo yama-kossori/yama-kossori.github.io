@@ -6,6 +6,8 @@
 - data/raw/livefans.json   … LiveFans の出演記録（日本語の公演名・会場名）
 - data/raw/rows.txt        … setlist.fm の 112 公演（日付|ID|会場|曲番号）。曲番号は SONGS の順
 - data/core.json           … 手で書いた節目のできごと（デビュー・リリース・タイアップなど）
+                              "x" があれば公式 X の埋め込み（x.html にも並ぶ）。
+                              {date, attach_x} だけの行は、同じ日付の LiveFans のライブ項目に公式 X のポストを付ける。
 毎月の更新では core.json に足すか、raw を取り直してこのスクリプト → build.py の順に走らせる。
 """
 import json, os, re
@@ -241,7 +243,14 @@ def mk_covers():
 MV = mk_mv()
 if __name__ == "__main__":
     sf = sf_rows()
-    T = J("data/core.json") + mk_releases() + mk_covers() + mk_lives(sf)
+    core = J("data/core.json")
+    T = [e for e in core if "attach_x" not in e] + mk_releases() + mk_covers() + mk_lives(sf)
+    for a in [e for e in core if "attach_x" in e]:
+        hit = next((e for e in T if e["date"] == a["date"] and e["cat"] == "live" and not e.get("x")), None)
+        if hit:
+            hit["x"] = a["attach_x"]
+        else:
+            print("attach_x: 同じ日付のライブが見つからない", a["date"])
     T.sort(key=lambda e: e["date"])
     json.dump(MV, open(os.path.join(ROOT, "data", "mv.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     json.dump(T, open(os.path.join(ROOT, "data", "timeline.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
