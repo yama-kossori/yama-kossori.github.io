@@ -1,0 +1,701 @@
+{
+ "cover:暖かい生き物": {
+  "id": "vDWXYWE3Hgk",
+  "title": "暖かい生き物（歌ってみた）",
+  "kind": "歌ってみた",
+  "yt_date": "2018-03-28"
+ },
+ "cover:夜がはじまる": {
+  "id": "c0cSmV-V3lQ",
+  "title": "夜がはじまる（歌ってみた）",
+  "kind": "歌ってみた",
+  "yt_date": "2018-07-08"
+ },
+ "cover:bin": {
+  "id": "W92y4dfy4wg",
+  "title": "bin（歌ってみた）",
+  "kind": "歌ってみた",
+  "yt_date": "2018-08-20"
+ },
+ "cover:アイアルの勘違い": {
+  "id": "5FvZfoht_Q4",
+  "title": "アイアルの勘違い（歌ってみた）",
+  "kind": "歌ってみた",
+  "yt_date": "2018-12-08"
+ },
+ "cover:優しい人": {
+  "id": "cYw6HfPWyUU",
+  "title": "優しい人（歌ってみた）",
+  "kind": "歌ってみた",
+  "yt_date": "2019-01-04"
+ },
+ "cover:アイボリー": {
+  "id": "VDgMWIre9yw",
+  "title": "アイボリー（歌ってみた）",
+  "kind": "歌ってみた",
+  "yt_date": "2019-01-20"
+ },
+ "cover:ヲズワルド": {
+  "id": "-YlP06HtTEk",
+  "title": "ヲズワルド（歌ってみた）",
+  "kind": "歌ってみた",
+  "yt_date": "2019-02-24"
+ },
+ "cover:donica": {
+  "id": "KEikagoWi5k",
+  "title": "donica（歌ってみた）",
+  "kind": "歌ってみた",
+  "yt_date": "2019-03-28"
+ },
+ "cover:believe": {
+  "id": "3ftkaS1jT5s",
+  "title": "believe（歌ってみた）",
+  "kind": "歌ってみた",
+  "yt_date": "2019-04-21"
+ },
+ "cover:記憶の水槽": {
+  "id": "LJ-4Psa_oHs",
+  "title": "記憶の水槽（歌ってみた）",
+  "kind": "歌ってみた",
+  "yt_date": "2019-05-12"
+ },
+ "cover:あわよくばきみの眷属になりたいな": {
+  "id": "HS0a-P_6LQc",
+  "title": "あわよくばきみの眷属になりたいな（歌ってみた）",
+  "kind": "歌ってみた",
+  "yt_date": "2019-07-28"
+ },
+ "cover:チョコレートミルク": {
+  "id": "hm2D1O_Gx9c",
+  "title": "チョコレートミルク（歌ってみた）",
+  "kind": "歌ってみた",
+  "yt_date": "2019-09-29"
+ },
+ "cover:屑": {
+  "id": "XK16E-lt2z8",
+  "title": "屑（歌ってみた）",
+  "kind": "歌ってみた",
+  "yt_date": "2019-11-03"
+ },
+ "cover:A rainy dancer": {
+  "id": "9Ga85upOQMs",
+  "title": "A rainy dancer（歌ってみた）",
+  "kind": "歌ってみた",
+  "yt_date": "2019-12-07"
+ },
+ "cover:幽霊東京": {
+  "id": "qhTkYIQQKYk",
+  "title": "幽霊東京（歌ってみた）",
+  "kind": "歌ってみた",
+  "yt_date": "2020-01-13"
+ },
+ "cover:りりか(る)": {
+  "id": "HUwrP7IhP_U",
+  "title": "りりか(る)（歌ってみた）",
+  "kind": "歌ってみた",
+  "yt_date": "2020-03-08"
+ },
+ "春を告げる": {
+  "id": "DC6JppqHkaM",
+  "title": "yama - 春を告げる (Official Video)",
+  "kind": "オリジナル",
+  "yt_date": "2020-04-16"
+ },
+ "クリーム": {
+  "id": "F0F1rrVI7cQ",
+  "title": "yama - クリーム  (Official Video)",
+  "kind": "オリジナル",
+  "yt_date": "2020-05-26"
+ },
+ "Downtown": {
+  "id": "n2aX8ZMxUIE",
+  "title": "yama - Downtown  (Official Video)",
+  "kind": "オリジナル",
+  "yt_date": "2020-06-30"
+ },
+ "a.m.3:21": {
+  "id": "1KN4DhVXw-Y",
+  "title": "yama - a.m.3:21 (Official Video)",
+  "kind": "オリジナル",
+  "yt_date": "2020-08-11"
+ },
+ "あるいは映画のような": {
+  "id": "Pr6_cy4o8yo",
+  "title": "yama - あるいは映画のような (Official Video)",
+  "kind": "オリジナル",
+  "yt_date": "2020-09-07"
+ },
+ "live:クリーム（Versus the night）": {
+  "id": "7yhsUji8z50",
+  "title": "yama 『クリーム』-1st 配信ライブ「Versus the night」Ver.-",
+  "kind": "ライブ映像",
+  "yt_date": "2020-10-05"
+ },
+ "真っ白": {
+  "id": "lj64XpVS7dk",
+  "title": "yama 『真っ白』Music Video（Film Edition）",
+  "kind": "オリジナル",
+  "yt_date": "2020-10-20"
+ },
+ "麻痺": {
+  "id": "2By3feOVw20",
+  "title": "yama 『麻痺』MV",
+  "kind": "オリジナル",
+  "yt_date": "2021-01-14"
+ },
+ "名前のない日々へ": {
+  "id": "w8klWfstdII",
+  "title": "yama 『名前のない日々へ』MV",
+  "kind": "オリジナル",
+  "yt_date": "2021-02-21"
+ },
+ "一寸の赤": {
+  "id": "zIE8htt4HLg",
+  "title": "yama 『一寸の赤』MV",
+  "kind": "オリジナル",
+  "yt_date": "2021-03-24"
+ },
+ "カーテンコール": {
+  "id": "87HUWL9J_2Y",
+  "title": "yama『カーテンコール』MV",
+  "kind": "オリジナル",
+  "yt_date": "2021-06-01"
+ },
+ "live:あるいは映画のような（ライブ映像）": {
+  "id": "rkwdKKskX1o",
+  "title": "yama 『あるいは映画のような』- 2nd 配信ライブ「Versus The Night 0.0」Ver.-",
+  "kind": "ライブ映像",
+  "yt_date": "2021-06-25"
+ },
+ "Sleepless Night": {
+  "id": "quAkTWw8NPc",
+  "title": "yama『Sleepless Night』MV",
+  "kind": "オリジナル",
+  "yt_date": "2021-08-16"
+ },
+ "ランニングアウト": {
+  "id": "_ABe7rZw7pQ",
+  "title": "yama『ランニングアウト』MV",
+  "kind": "オリジナル",
+  "yt_date": "2021-08-19"
+ },
+ "live:タルト〜クローバー（ライブ映像）": {
+  "id": "xqnhmaeygNc",
+  "title": "yama『タルト〜クローバー』-2nd配信ライブ「Versus The Night 0.0」Ver.-",
+  "kind": "ライブ映像",
+  "yt_date": "2021-09-01"
+ },
+ "血流": {
+  "id": "munngDZLwO4",
+  "title": "yama『血流』MV",
+  "kind": "オリジナル",
+  "yt_date": "2021-09-24"
+ },
+ "希望論": {
+  "id": "ikqA7l2QHc4",
+  "title": "yama『希望論』MV",
+  "kind": "オリジナル",
+  "yt_date": "2021-10-01"
+ },
+ "Oz.": {
+  "id": "Odv-zbpy-Y8",
+  "title": "yama『Oz.』MV",
+  "kind": "オリジナル",
+  "yt_date": "2021-10-22"
+ },
+ "世界は美しいはずなんだ": {
+  "id": "xXpAO102A50",
+  "title": "yama『世界は美しいはずなんだ』MV",
+  "kind": "オリジナル",
+  "yt_date": "2021-11-25"
+ },
+ "スモーキーヒロイン": {
+  "id": "1Bthsl8SqhQ",
+  "title": "yama『スモーキーヒロイン』MV",
+  "kind": "オリジナル",
+  "yt_date": "2021-12-24"
+ },
+ "live:春を告げる（ライブ映像）": {
+  "id": "4A9cLB1zQmk",
+  "title": "yama 『春を告げる』Official Live Video",
+  "kind": "ライブ映像",
+  "yt_date": "2022-02-10"
+ },
+ "live:麻痺（ライブ映像）": {
+  "id": "TMQw-d7MHm0",
+  "title": "yama 『麻痺』 Official Live Video",
+  "kind": "ライブ映像",
+  "yt_date": "2022-02-19"
+ },
+ "MoonWalker": {
+  "id": "BTvbo_UIs5A",
+  "title": "yama『MoonWalker』MV",
+  "kind": "オリジナル",
+  "yt_date": "2022-03-25"
+ },
+ "桃源郷": {
+  "id": "XrUCwI7xyhQ",
+  "title": "yama『桃源郷』MV",
+  "kind": "オリジナル",
+  "yt_date": "2022-06-22"
+ },
+ "くびったけ": {
+  "id": "ZaQPigOGdG4",
+  "title": "yama『くびったけ』MV produced by Vaundy",
+  "kind": "オリジナル",
+  "yt_date": "2022-07-29"
+ },
+ "Lost": {
+  "id": "bbmOEiorMrg",
+  "title": "yama『Lost』MV",
+  "kind": "オリジナル",
+  "yt_date": "2022-08-17"
+ },
+ "live:Oz.（ライブ映像）": {
+  "id": "LROPWVAsryA",
+  "title": "yama 『Oz.』- 2nd ALBUM 『Versus the night 1.0』ACOUSTIC LIVE",
+  "kind": "ライブ映像",
+  "yt_date": "2022-08-20"
+ },
+ "live:Lost（ライブ映像）": {
+  "id": "wakCtB5ONuo",
+  "title": "yama 『Lost』- 2nd ALBUM 『Versus the night 1.0』ACOUSTIC LIVE",
+  "kind": "ライブ映像",
+  "yt_date": "2022-08-25"
+ },
+ "それでも僕は": {
+  "id": "wq1GacStaj4",
+  "title": "yama『それでも僕は』MV",
+  "kind": "オリジナル",
+  "yt_date": "2022-09-02"
+ },
+ "色彩": {
+  "id": "E9Dru15yq9w",
+  "title": "yama『色彩』MV（TVアニメ「SPYxFAMILY」第2クールエンディング主題歌）",
+  "kind": "オリジナル",
+  "yt_date": "2022-10-03"
+ },
+ "live:色彩（“the meaning of life“ TOUR 2022 at Zepp DiverCity 2022.10.8）": {
+  "id": "s9v2UQicIk8",
+  "title": "yama『色彩』Official Live Video (“the meaning of life“ TOUR 2022 at Zepp DiverCity 2022.10.8)",
+  "kind": "ライブ映像",
+  "yt_date": "2022-10-22"
+ },
+ "愛を解く": {
+  "id": "TeXWm3z1ECw",
+  "title": "yama『愛を解く』MV",
+  "kind": "オリジナル",
+  "yt_date": "2022-11-19"
+ },
+ "live:くびったけ（“the meaning of life“ TOUR 2022 at Zepp DiverCity 2022.10.8）": {
+  "id": "J-PIE2qGW_U",
+  "title": "yama『くびったけ』Official Live Video (“the meaning of life“ TOUR 2022 at Zepp DiverCity 2022.10.8)",
+  "kind": "ライブ映像",
+  "yt_date": "2023-02-22"
+ },
+ "live:ライカ（“the meaning of life“ TOUR 2022 at Zepp DiverCity 2022.10.8）": {
+  "id": "nRqTi-16l6o",
+  "title": "yama『ライカ』Official Live Video (“the meaning of life“ TOUR 2022 at Zepp DiverCity 2022.10.8)",
+  "kind": "ライブ映像",
+  "yt_date": "2023-02-25"
+ },
+ "slash": {
+  "id": "tsh7waq3Fyo",
+  "title": "yama『slash』Music Video（TVアニメ『機動戦士ガンダム 水星の魔女』Season2 OP）",
+  "kind": "オリジナル",
+  "yt_date": "2023-05-22"
+ },
+ "いぶき": {
+  "id": "DCFxibSc_FY",
+  "title": "yama『いぶき』MV（カンロ 『ピュレグミ』 CMソング）",
+  "kind": "オリジナル",
+  "yt_date": "2023-04-19"
+ },
+ "live:ストロボ（“Special Online Live「Early Summer Nights」“ 2023.05.23）": {
+  "id": "SB787i-Ys1I",
+  "title": "yama『ストロボ』Official Live Video (“Special Online Live「Early Summer Nights」“ 2023.05.23)",
+  "kind": "ライブ映像",
+  "yt_date": "2023-05-30"
+ },
+ "live:新星（acoustic live tour 2023 “夜と閃き“ at GORILLA HALL OSAKA）": {
+  "id": "hLL58RvyDMc",
+  "title": "yama『新星』Official Live Video (acoustic live tour 2023 “夜と閃き“ at GORILLA HALL OSAKA)",
+  "kind": "ライブ映像",
+  "yt_date": "2023-06-15"
+ },
+ "live:slash（“Special Online Live「Early Summer Nights」“ 2023.05.23）": {
+  "id": "m6ql53JBQUU",
+  "title": "yama『slash』Official Live Video (“Special Online Live「Early Summer Nights」“ 2023.05.23)",
+  "kind": "ライブ映像",
+  "yt_date": "2023-06-25"
+ },
+ "返光": {
+  "id": "x3sT-pdcKno",
+  "title": "yama『返光(Movie Edition)』lyric Video（映画『スイート・マイホーム』主題歌）",
+  "kind": "オリジナル",
+  "yt_date": "2023-09-02"
+ },
+ "憧れのままに": {
+  "id": "yIncOcSN2aQ",
+  "title": "yama × キタニタツヤ『憧れのままに』 KONA Collaboration Video",
+  "kind": "オリジナル",
+  "yt_date": "2023-09-20"
+ },
+ "パレットは透明": {
+  "id": "O4yzPf1oC6k",
+  "title": "yama『パレットは透明』MV",
+  "kind": "オリジナル",
+  "yt_date": "2023-10-18"
+ },
+ "ハロ": {
+  "id": "QtSqly4U2cA",
+  "title": "yama × ぼっちぼろまる『ハロ』MV（テレビアニメ「ポケットモンスター」オープニングテーマ）",
+  "kind": "オリジナル",
+  "yt_date": "2023-12-13"
+ },
+ "偽顔": {
+  "id": "wA1LKdGwFgc",
+  "title": "yama『偽顔』Music Video（3rd ALBUM「awake＆build」）",
+  "kind": "オリジナル",
+  "yt_date": "2024-01-17"
+ },
+ "沫雪": {
+  "id": "0-lDCyS7_jQ",
+  "title": "yama『沫雪』Music Video",
+  "kind": "オリジナル",
+  "yt_date": "2024-02-08"
+ },
+ "灰炎": {
+  "id": "kBBzxyJi5qw",
+  "title": "yama『灰炎 (with. cinema staff)』Lyric Video",
+  "kind": "オリジナル",
+  "yt_date": "2024-02-15"
+ },
+ "日々": {
+  "id": "Pb5wsopO_yY",
+  "title": "yama『日々』Lyric Video",
+  "kind": "オリジナル",
+  "yt_date": "2024-02-22"
+ },
+ "こだま": {
+  "id": "YyPmGw2FFNY",
+  "title": "yama『こだま』Music Video",
+  "kind": "オリジナル",
+  "yt_date": "2024-03-16"
+ },
+ "イノセント": {
+  "id": "qMHycdZvEf0",
+  "title": "yama『イノセント』Lyric Video",
+  "kind": "オリジナル",
+  "yt_date": "2024-04-13"
+ },
+ "声明": {
+  "id": "Hck00ktYkiE",
+  "title": "yama『声明』SusHi Tech Tokyo 2024 Collaboration Video",
+  "kind": "オリジナル",
+  "yt_date": "2024-05-16"
+ },
+ "新星": {
+  "id": "fxjknxrrRsc",
+  "title": "yama『新星』Music Video",
+  "kind": "オリジナル",
+  "yt_date": "2024-08-31"
+ },
+ "live:色彩（the meaning of life）": {
+  "id": "5HnETk4bJRI",
+  "title": "yama『色彩』from “the meaning of life” TOUR 2024 at LINE CUBE SHIBUYA",
+  "kind": "ライブ映像",
+  "yt_date": "2025-01-23"
+ },
+ "BURN": {
+  "id": "H-Ll5b5NVYA",
+  "title": "yama✕WurtS『BURN』Music Video",
+  "kind": "オリジナル",
+  "yt_date": "2025-02-08"
+ },
+ "雫": {
+  "id": "67bZTIHSfi4",
+  "title": "yama『雫(prod. indigo la End)』Music Video",
+  "kind": "オリジナル",
+  "yt_date": "2025-02-26"
+ },
+ "semicolon": {
+  "id": "TJzCFAX9VsQ",
+  "title": "yama『semicolon』Music Video",
+  "kind": "オリジナル",
+  "yt_date": "2025-03-05"
+ },
+ "Film": {
+  "id": "hoE3xtR0Bco",
+  "title": "yama『Film』Music Video",
+  "kind": "オリジナル",
+  "yt_date": "2025-03-12"
+ },
+ "MUSE": {
+  "id": "6jM90IK_IaM",
+  "title": "yama『MUSE』Music Video",
+  "kind": "オリジナル",
+  "yt_date": "2025-03-19"
+ },
+ "rain check": {
+  "id": "lVnb2bx2FiE",
+  "title": "yama『rain check』Music Video",
+  "kind": "オリジナル",
+  "yt_date": "2025-03-26"
+ },
+ "GRIDOUT": {
+  "id": "1E_IB-HIucY",
+  "title": "yama『GRIDOUT』Music Video",
+  "kind": "オリジナル",
+  "yt_date": "2025-04-02"
+ },
+ "レコード": {
+  "id": "xHMEPLbMJO4",
+  "title": "yama『レコード（feat. Taka Perry）』Music Video",
+  "kind": "オリジナル",
+  "yt_date": "2025-04-09"
+ },
+ "TORIHADA": {
+  "id": "e6U45wIQvws",
+  "title": "yama『TORIHADA』Music Video",
+  "kind": "オリジナル",
+  "yt_date": "2025-04-18"
+ },
+ "春を告げる（☆Taku Takahashi Remix）": {
+  "id": "w8MPv8OU_JU",
+  "title": "yama『春を告げる（☆Taku Takahashi Remix）』Music Video",
+  "kind": "オリジナル",
+  "yt_date": "2025-04-23"
+ },
+ "砂の城": {
+  "id": "4AEBWikLVjo",
+  "title": "yama『砂の城』Music Video",
+  "kind": "オリジナル",
+  "yt_date": "2025-05-21"
+ },
+ "us": {
+  "id": "f8dw0JS3Yrg",
+  "title": "yama『us』Music Video",
+  "kind": "オリジナル",
+  "yt_date": "2025-07-09"
+ },
+ "Ever": {
+  "id": "PeUSiqbpBRU",
+  "title": "yama『Ever』Music Video",
+  "kind": "オリジナル",
+  "yt_date": "2025-07-16"
+ },
+ "doku": {
+  "id": "qb9Zn2cO-0U",
+  "title": "yama『doku』Lyric Video",
+  "kind": "オリジナル",
+  "yt_date": "2025-08-27"
+ },
+ "live:us（ライブ映像）": {
+  "id": "tO81F5U_n48",
+  "title": "yama『us』 Studio Live ver.",
+  "kind": "ライブ映像",
+  "yt_date": "2025-09-01"
+ },
+ "live:Ever（ライブ映像）": {
+  "id": "KyVfSdnUSd0",
+  "title": "yama『Ever』 Studio Live ver.",
+  "kind": "ライブ映像",
+  "yt_date": "2025-10-01"
+ },
+ "アダルトチックチルドレン": {
+  "id": "T_FZPrKLO8U",
+  "title": "yama『アダルトチックチルドレン』Music Video",
+  "kind": "オリジナル",
+  "yt_date": "2025-10-03"
+ },
+ "マジカルシンドローム": {
+  "id": "lTSlTK2_8Zk",
+  "title": "yama『マジカルシンドローム』Music Video",
+  "kind": "オリジナル",
+  "yt_date": "2025-10-25"
+ },
+ "季節の灯": {
+  "id": "Uo9BA6AIvyY",
+  "title": "yama『季節の灯』　「ACIDMAN Tribute Works」収録　Music Video",
+  "kind": "オリジナル",
+  "yt_date": "2025-11-05"
+ },
+ "TWILIGHT": {
+  "id": "itC5HQMmYcA",
+  "title": "yama『TWILIGHT』　Lyric Video",
+  "kind": "オリジナル",
+  "yt_date": "2025-12-03"
+ },
+ "End roll": {
+  "id": "QIThGwKySCc",
+  "title": "yama『End roll』　Lyric Video",
+  "kind": "オリジナル",
+  "yt_date": "2026-01-07"
+ },
+ "Dawn": {
+  "id": "UGWA5o4GkiU",
+  "title": "yama『Dawn』 Music Video",
+  "kind": "オリジナル",
+  "yt_date": "2026-01-21"
+ },
+ "live:TWILIGHT（ライブ映像）": {
+  "id": "kkkgUJlMdRQ",
+  "title": "yama『TWILIGHT』Studio Live ver.",
+  "kind": "ライブ映像",
+  "yt_date": "2026-02-06"
+ },
+ "蛹": {
+  "id": "LSwpWKyENyw",
+  "title": "yama『蛹』　Lyric Video",
+  "kind": "オリジナル",
+  "yt_date": "2026-02-11"
+ },
+ "live:蛹（ライブ映像）": {
+  "id": "UmI_abZKSAY",
+  "title": "yama『蛹』Studio Live ver.",
+  "kind": "ライブ映像",
+  "yt_date": "2026-02-28"
+ },
+ "live:End roll（ライブ映像）": {
+  "id": "DyMglp114O4",
+  "title": "yama『End roll』Studio Live ver.",
+  "kind": "ライブ映像",
+  "yt_date": "2026-03-06"
+ },
+ "live:春を告げる（Life is beautiful 2024）": {
+  "id": "DoS3Q6hIRW0",
+  "title": "【4億回再生記念】yama『春を告げる（Life is beautiful 2024）』",
+  "kind": "ライブ映像",
+  "yt_date": "2026-03-12"
+ },
+ "UPSIDE DOWN": {
+  "id": "WvXreqyK7rE",
+  "title": "yama『UPSIDE DOWN』Music Video",
+  "kind": "オリジナル",
+  "yt_date": "2026-05-01"
+ },
+ "Remember": {
+  "id": "7P1WWxteWyQ",
+  "title": "yama『Remember』　Lyric Video",
+  "kind": "オリジナル",
+  "yt_date": "2026-03-18"
+ },
+ "Hanamushiro": {
+  "id": "MjqqvN5m6xU",
+  "title": "yama『Hanamushiro』　Lyric Video",
+  "kind": "オリジナル",
+  "yt_date": "2026-03-18"
+ },
+ "live:Remember（ライブ映像）": {
+  "id": "qKRbs-Qxg3o",
+  "title": "yama『Remember』Studio Live ver.",
+  "kind": "ライブ映像",
+  "yt_date": "2026-03-28"
+ },
+ "live:UPSIDE DOWN（ライブ映像）": {
+  "id": "TWAxmldiWuQ",
+  "title": "yama『UPSIDE DOWN』Studio Live ver.",
+  "kind": "ライブ映像",
+  "yt_date": "2026-04-03"
+ },
+ "live:Hanamushiro（ライブ映像）": {
+  "id": "i4z21HQ5ISM",
+  "title": "yama『Hanamushiro』Studio Live ver.",
+  "kind": "ライブ映像",
+  "yt_date": "2026-04-10"
+ },
+ "飛ぼうよ": {
+  "id": "8uRMfPTAhkU",
+  "title": "yama『飛ぼうよ』Music Video",
+  "kind": "オリジナル",
+  "yt_date": "2026-04-18"
+ },
+ "飛ぶ時": {
+  "id": "vCrZrKbg-Us",
+  "title": "yama『飛ぶ時』Music Video",
+  "kind": "オリジナル",
+  "yt_date": "2026-04-25"
+ },
+ "U and I": {
+  "id": "jFB4e8AHTfo",
+  "title": "yama『U and I』　Music Video",
+  "kind": "オリジナル",
+  "yt_date": "2026-07-27"
+ },
+ "mountain": {
+  "id": "aCTZOagjuGA",
+  "title": "yama『mountain』　Lyric Video",
+  "kind": "オリジナル",
+  "yt_date": "2026-08-12"
+ },
+ "さよならは言わない": {
+  "id": "0Ldh_MWIIFk",
+  "title": "yama『さよならは言わない』　Music Video",
+  "kind": "オリジナル",
+  "yt_date": "2026-10-10"
+ },
+ "feat:ねむるまち": {
+  "id": "ePBjUMEeqBw",
+  "title": "ねむるまち feat.yama (Official Video)",
+  "kind": "feat",
+  "by": "くじら",
+  "yt_date": "2019-11-02"
+ },
+ "feat:寝れない夜に": {
+  "id": "5dGEIIdaL0A",
+  "title": "寝れない夜に feat.yama (Official Video)",
+  "kind": "feat",
+  "by": "くじら",
+  "yt_date": "2020-10-15"
+ },
+ "feat:チルドレン": {
+  "id": "w73Ks2WX_XQ",
+  "title": "チルドレン - BIN(Official Video)",
+  "kind": "feat",
+  "by": "BIN",
+  "yt_date": "2019-03-16"
+ },
+ "feat:インスタント": {
+  "id": "ufVRe3aifu0",
+  "title": "インスタント - BIN(Official Video)",
+  "kind": "feat",
+  "by": "BIN",
+  "yt_date": "2019-10-05"
+ },
+ "feat:colony": {
+  "id": "YTNOYW2Vdu4",
+  "title": "colony - BIN(Official Video)",
+  "kind": "feat",
+  "by": "BIN",
+  "yt_date": "2021-03-26"
+ },
+ "feat:melt": {
+  "id": "-wY5jlS0EtU",
+  "title": "melt - BIN (Official Video)",
+  "kind": "feat",
+  "by": "BIN",
+  "yt_date": "2022-09-13"
+ },
+ "feat:アイタリナイ": {
+  "id": "gOagc0RUFlg",
+  "title": "アイタリナイ [feat. yama, ニト。] / MAISONdes",
+  "kind": "feat",
+  "by": "MAISONdes",
+  "yt_date": "2023-01-26"
+ },
+ "feat:Nemophila": {
+  "id": "3u-KQ_N0wbo",
+  "title": "秋山黄色『Nemophila feat. yama』",
+  "kind": "feat",
+  "by": "秋山黄色",
+  "yt_date": "2026-01-28"
+ },
+ "Hello/Hello": {
+  "id": "zj_X7PS8cpk",
+  "title": "Hello/Hello feat. yama, 泣き虫☔(Bedroom ver.) – MAISONdes",
+  "kind": "feat",
+  "by": "MAISONdes",
+  "yt_date": "2021-01-24"
+ }
+}
