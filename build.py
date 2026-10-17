@@ -19,8 +19,8 @@ from datetime import date
 ROOT = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(ROOT, "docs")
 NAME = "yamaファンのこっそり部屋"
-SITE = "https://masabee1029.github.io/yama-kossori/"
-GA = "G-EHWF25C1RB"  # ほかのサイトと共通の測定 ID（GA4 でページパス /yama-kossori/ で絞る）
+SITE = "https://yama-kossori.github.io/"
+GA = "G-EHWF25C1RB"  # ほかのサイトと共通の測定 ID（GA4 でホスト名 yama-kossori.github.io で絞る）
 EVENTS_JS = os.path.expanduser("~/knowledge-os/oshi-events.js")
 TODAY = date.today().isoformat()
 

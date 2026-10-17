@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://masabee1029.github.io/yama-kossori/sitemap.xml
+Sitemap: https://yama-kossori.github.io/sitemap.xml
