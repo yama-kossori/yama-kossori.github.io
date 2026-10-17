@@ -20,7 +20,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(ROOT, "docs")
 NAME = "yamaファンのこっそり部屋"
 SITE = "https://masabee1029.github.io/yama-kossori/"
-GA = ""  # Google アナリティクスは未設定（設定したら ID を入れる）
+GA = "G-EHWF25C1RB"  # ほかのサイトと共通の測定 ID（GA4 でページパス /yama-kossori/ で絞る）
 EVENTS_JS = os.path.expanduser("~/knowledge-os/oshi-events.js")
 TODAY = date.today().isoformat()
 
@@ -579,7 +579,7 @@ def build():
 <li>歌詞の引用、公式の写真・イラスト・ロゴの複製・転載はしません。画像は、YouTube の公式動画のサムネイル（YouTube から直接表示し、動画にリンク）だけです。権利は各権利者に帰属します。削除のご依頼があればすぐに対応します</li>
 <li>素顔・プロフィールの詮索や、うわさ話・私生活に関することは書きません</li></ul>
 <h2>プライバシーポリシー</h2>
-<p>動画のサムネイルは YouTube（Google）から直接表示しているため、YouTube が Cookie などで情報を取得する場合があります。このサイト自体は、アクセス解析などで個人の情報を集めていません。</p>
+<p>動画のサムネイルは YouTube（Google）から直接表示しているため、YouTube が Cookie などで情報を取得する場合があります。アクセスの傾向を知るために Google アナリティクスを使っています。Cookie を使って匿名のアクセス情報を集めますが、個人を特定する情報は集めません。ブラウザの設定で Cookie を無効にできます。</p>
 <h2>参考にしている情報源</h2><ul>
 <li><a href="https://yamaofficial.com/" target="_blank" rel="noopener">yama OFFICIAL SITE</a></li>
 <li><a href="https://www.sonymusic.co.jp/artist/yama/" target="_blank" rel="noopener">yama - ソニーミュージック</a></li>
