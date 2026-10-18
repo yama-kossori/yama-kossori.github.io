@@ -1,6 +1,6 @@
 # yamaファンのこっそり部屋
 
-シンガー yama さんの歩みを、2018年の歌ってみたから今まで年表にまとめた有志の非公式ファンサイト。
+シンガー yama さんの歩みを、2018年の歌ってみたから今まで年表にまとめた非公式ファンサイト。
 公開先: https://yama-kossori.github.io/
 保管庫（リポジトリ）: yama-kossori/yama-kossori.github.io（GitHub 組織 yama-kossori）。旧 masabee1029/yama-kossori は新しい住所への転送ページだけ（~/yama-kossori-redirect）。新しいページを足したら転送ページも足す
 つくりは「Ado 非公式ワクワク秘密基地」（~/ado-himitsukichi）と同じ。

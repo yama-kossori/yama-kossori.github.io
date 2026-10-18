@@ -11,7 +11,7 @@
   MV は data/mv.json（曲名→公式 YouTube の動画 ID）から YouTube のサムネイルを i.ytimg.com から直接表示し、動画にリンクする。
   yama 公式チャンネル = UClbieOB_NYcY9TlIthmyw-A。feat. はそのアーティスト本人の公式チャンネルの動画だけ。
 - セットリスト … data/setlists.json（setlist.fm のファンの記録を日本語の曲名に直したもの）。
-有志の非公式サイト。アフィリエイト・広告は入れない。歌詞の引用や公式素材は載せない。
+非公式のファンサイト。アフィリエイト・広告は入れない。歌詞の引用や公式素材は載せない。
 """
 import html, json, os, re, shutil
 from datetime import date
@@ -359,7 +359,7 @@ def sidebar():
     eras = "".join(f'<li><a href="{{R}}era/{e[0]}.html">{e[1]}</a></li>' for e in ERAS)
     years = "".join(f'<li><a href="{{R}}year/{y}.html">{y}年</a></li>' for y in YEARS)
     return f"""<aside class="side">
-<div class="box"><h2>🫧 この部屋について</h2><p class="note">yama さんを応援する有志がこっそりつくった<b>非公式</b>の年表サイトです。2018年の歌ってみたから今までの歩みを、毎月のできごとごとに書き足していきます。公式とは関係ありません。</p></div>
+<div class="box"><h2>🫧 この部屋について</h2><p class="note">yama さんを応援するファンがこっそりつくった<b>非公式</b>の年表サイトです。2018年の歌ってみたから今までの歩みを、毎月のできごとごとに書き足していきます。公式とは関係ありません。</p></div>
 <div class="box"><h2>🎤 歌ってみた</h2><p class="note">YouTube の歌ってみた（カバー）を投稿順にまとめました。</p><ul><li><a href="{{R}}covers.html">歌ってみた まとめ（{sum(1 for k in MV if k.startswith("cover:"))} 曲）</a></li></ul></div>
 <div class="box"><h2>📚 雑誌インタビュー</h2><p class="note">雑誌・Web のインタビューや対談など、公式 X で告知された掲載をまとめました。</p><ul><li><a href="{{R}}magazines.html">雑誌インタビュー まとめ（{len(MAGS)} 件）</a></li></ul></div>
 <div class="box"><h2>🐦 公式Xまとめ</h2><p class="note">デビュー・リリース・ツアーなど節目の公式ポストを、X の埋め込みで並べました。</p><ul><li><a href="{{R}}x.html">公式Xまとめ（{sum(1 for e in T if e.get("x"))} 件）</a></li></ul></div>
@@ -402,11 +402,11 @@ def page(path, title, desc, body, crumb=None, hero=False):
 {f'<meta property="og:image" content="{og}"><meta name="twitter:card" content="summary_large_image">' if og else ''}
 {ga_tag()}
 <style>{CSS}</style></head><body>
-<header class="top"><div class="in"><a class="logo" href="{R}index.html">yamaファンの<span>こっそり</span>部屋</a><span class="badge">有志の非公式ファンサイト</span></div></header>
+<header class="top"><div class="in"><a class="logo" href="{R}index.html">yamaファンの<span>こっそり</span>部屋</a><span class="badge">非公式ファンサイト</span></div></header>
 <nav class="gnav"><ul>{nav}</ul></nav>
 {heroh}
 <div class="layout"><main>{cr}{body}</main>{sidebar()}</div>
-<footer>{NAME} は、yama さんを応援する有志による<b>非公式</b>のファンサイトです。yama さん本人・所属事務所・レーベルとは関係ありません。<br>
+<footer>{NAME} は、yama さんを応援するファンによる<b>非公式</b>のファンサイトです。yama さん本人・所属事務所・レーベルとは関係ありません。<br>
 掲載情報は公開されている報道・公式発表・ライブ記録サイトをもとにしています。最新・正確な情報は<a href="https://yamaofficial.com/" target="_blank" rel="noopener">公式サイト</a>でご確認ください。<br>
 画像ファイルの複製・転載はしていません。動画のサムネイルは YouTube から直接表示し、動画にリンクしています（権利は各権利者に帰属します）。 ／ <a href="{R}about.html">この部屋について・プライバシー</a><br>最終更新: {TODAY}</footer>
 {widgets}</body></html>"""
@@ -492,7 +492,7 @@ def build():
     mosaic = '<div class="mosaic">' + "".join(
         f'<a href="{watch(MV[k]["id"])}" target="_blank" rel="noopener" title="{esc(MV[k]["title"])}"><img src="{thumb_url(MV[k]["id"])}" alt="{esc(MV[k]["title"])}"></a>'
         for k in top if k in MV) + "</div>"
-    page("index.html", NAME, "シンガー yama さんの歩みを、2018年の歌ってみたから今まで年表にまとめた有志の非公式ファンサイト。ライブ・リリース・MV・セットリストも。毎月更新。", body, hero=mosaic)
+    page("index.html", NAME, "シンガー yama さんの歩みを、2018年の歌ってみたから今まで年表にまとめた非公式ファンサイト。ライブ・リリース・MV・セットリストも。毎月更新。", body, hero=mosaic)
 
     # 全年表
     jump = " ".join(f'<a href="#y{y}">{y}</a>' for y in YEARS)
@@ -613,7 +613,7 @@ function go(){{window.twttr&&twttr.widgets?twttr.widgets.load(d):setTimeout(go,3
 
     # この部屋について
     page("about.html", "この部屋について", "yamaファンのこっそり部屋について、運営方針とプライバシーポリシー。", """<section><h1>この部屋について</h1>
-<p>「yamaファンのこっそり部屋」は、シンガー yama さんを応援する有志がつくった<b>非公式</b>のファンサイトです。yama さん本人、所属事務所、レーベル（ソニー・ミュージックレーベルズ）とは一切関係ありません。</p>
+<p>「yamaファンのこっそり部屋」は、シンガー yama さんを応援するファンがつくった<b>非公式</b>のファンサイトです。yama さん本人、所属事務所、レーベル（ソニー・ミュージックレーベルズ）とは一切関係ありません。</p>
 <h2>この部屋でやっていること</h2><ul>
 <li>2018年の歌ってみたから今までのできごとを、年表にまとめています。ライブは 1 公演ずつ年表にのせています</li>
 <li>毎月、前の月のできごとを書き足します。これからの予定は毎週更新します</li>
