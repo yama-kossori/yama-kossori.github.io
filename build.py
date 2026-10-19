@@ -149,6 +149,8 @@ def songs_in(e):
 
 
 def where(m, svc):
+    if m.get("kind") == "タイアップ":
+        return f"{svc} で見る（タイアップ先: {esc(m['by'])}）"
     if m.get("by"):
         return f"{svc} で見る（{esc(m['by'])} 公式）"
     return f"{svc} で見る（yama 公式チャンネル）"
@@ -165,6 +167,23 @@ def mv_card(k):
     return (f'<div class="mvw"><a class="mv{" nc" if svc != "YouTube" else ""}" href="{href}" target="_blank" rel="noopener">'
             f'<span class="th"><img src="{src}" alt="" loading="lazy"><i>▶</i></span>'
             f'<span class="mt">{esc(m["title"])}<small>{where(m, svc)}</small></span></a>{nico}</div>')
+
+
+TIEUP = {k: v for k, v in json.load(open(os.path.join(ROOT, "data", "tieup_videos.json"), encoding="utf-8")).items() if not k.startswith("_")}
+for _song, _vs in TIEUP.items():
+    for _v in _vs:
+        MV[f"tieup:{_v['id']}"] = {"id": _v["id"], "title": _v["title"], "kind": "タイアップ", "by": _v["by"], "yt_date": _v["date"]}
+
+
+def with_tieup_videos(e):
+    """タイアップページ用: その曲のタイアップ先の公式動画を項目の動画に足す。"""
+    songs = list(e.get("videos") or songs_in(e))
+    extra = [f"tieup:{v['id']}" for s in songs for v in TIEUP.get(s, [])]
+    if not extra:
+        return e
+    e2 = dict(e)
+    e2["videos"] = songs + [k for k in extra if k not in songs]
+    return e2
 
 
 def x_embed(url):
@@ -522,8 +541,18 @@ def build():
     groups = {"release": {"release", "feat", "cover", "youtube"}, "live": {"live"}, "tieup": {"tieup", "media", "award"}}
     leads = {"release": "配信シングル・アルバム・映像作品・客演・歌ってみたのできごと。", "live": "ワンマンライブ・ツアー・フェス出演の記録。",
              "tieup": "映画・アニメ・ドラマのタイアップ、テレビ・ラジオ出演、受賞と記録。"}
+    tv_n = sum(len(v) for v in TIEUP.values())
+    leads["tieup"] += f"アニメのノンクレジット映像や主題歌入りの予告など、タイアップ先の公式 YouTube 動画 {tv_n} 本ものせています。"
     for k, t in CAT_PAGES:
         ev = [x for x in T if x["cat"] in groups[k]]
+        if k == "tieup":
+            ev = [with_tieup_videos(x) for x in ev]
+            seen = set()  # 同じ曲の配信と CD の両方に出ないよう、タイアップ動画は最初の項目だけ
+            for i, x in enumerate(ev):
+                vs = [v for v in x.get("videos", []) if not (v.startswith("tieup:") and v in seen)]
+                seen.update(v for v in vs if v.startswith("tieup:"))
+                if vs != x.get("videos", []):
+                    ev[i] = dict(x, videos=vs)
         page(f"{k}.html", t, f"yama さんの{t}の年表。{leads[k]}",
              f'<section><h1>{t}</h1><p class="lead">{leads[k]}</p></section><section>{timeline(ev)}</section>', crumb=[t])
 
