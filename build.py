@@ -378,10 +378,10 @@ def sidebar():
     eras = "".join(f'<li><a href="{{R}}era/{e[0]}.html">{e[1]}</a></li>' for e in ERAS)
     years = "".join(f'<li><a href="{{R}}year/{y}.html">{y}年</a></li>' for y in YEARS)
     return f"""<aside class="side">
-<div class="box"><h2>🫧 この部屋について</h2><p class="note">yama さんを応援するファンがこっそりつくった<b>非公式</b>の年表サイトです。2018年の歌ってみたから今までの歩みを、毎月のできごとごとに書き足していきます。公式とは関係ありません。</p></div>
-<div class="box"><h2>🎤 歌ってみた</h2><p class="note">YouTube の歌ってみた（カバー）を投稿順にまとめました。</p><ul><li><a href="{{R}}covers.html">歌ってみた まとめ（{sum(1 for k in MV if k.startswith("cover:"))} 曲）</a></li></ul></div>
-<div class="box"><h2>📚 雑誌インタビュー</h2><p class="note">雑誌・Web のインタビューや対談など、公式 X で告知された掲載をまとめました。</p><ul><li><a href="{{R}}magazines.html">雑誌インタビュー まとめ（{len(MAGS)} 件）</a></li></ul></div>
-<div class="box"><h2>🐦 公式Xまとめ</h2><p class="note">デビュー・リリース・ツアーなど節目の公式ポストを、X の埋め込みで並べました。</p><ul><li><a href="{{R}}x.html">公式Xまとめ（{sum(1 for e in T if e.get("x"))} 件）</a></li></ul></div>
+<div class="box"><h2>🫧 この部屋について</h2><p class="note">yama さんの歩みを、2018年の歌ってみたから今まで、あなたと一緒にたどれる<b>非公式</b>の年表サイトです。ファンがこっそりつくり、毎月のできごとごとに書き足していきます。公式とは関係ありません。</p></div>
+<div class="box"><h2>🎤 歌ってみた</h2><p class="note">yama さんの歌声の原点を、投稿順にたどれます。</p><ul><li><a href="{{R}}covers.html">歌ってみた まとめ（{sum(1 for k in MV if k.startswith("cover:"))} 曲）</a></li></ul></div>
+<div class="box"><h2>📚 雑誌インタビュー</h2><p class="note">yama さんの言葉に、誌面や Web でも触れられます。公式 X で告知されたインタビューや対談をまとめました。</p><ul><li><a href="{{R}}magazines.html">雑誌インタビュー まとめ（{len(MAGS)} 件）</a></li></ul></div>
+<div class="box"><h2>🐦 公式Xまとめ</h2><p class="note">節目の瞬間を、公式の言葉でふり返れます。</p><ul><li><a href="{{R}}x.html">公式Xまとめ（{sum(1 for e in T if e.get("x"))} 件）</a></li></ul></div>
 <div class="box"><h2>🗺 時代でたどる</h2><ul>{eras}</ul></div>
 <div class="box sticky"><h2>📅 年でたどる</h2><ul>{years}</ul>
 <h2 style="margin-top:14px">📣 公式はこちら</h2><ul>
@@ -440,7 +440,7 @@ def upcoming_box(limit, title="これからの予定", more=True):
     link = '<p style="margin:10px 0 0;text-align:right"><a href="{R}schedule.html">予定をもっと見る →</a></p>' if more else ""
     return f"""<section><h2 class="sec-t">{title}</h2>
 <ul class="up" id="up" data-limit="{limit}"><li class="empty">読み込み中…</li></ul>{link}
-<p class="notice" style="margin-top:12px">予定は公式発表・報道をもとに毎週まとめています。変更になることがあるので、参加前に必ず公式でご確認ください。</p></section>
+<p class="notice" style="margin-top:12px">予定は公式発表・報道をもとに毎週まとめています。変更になることがあるので、お出かけ前に公式の最新情報もあわせてご確認ください。</p></section>
 <script src="{{R}}upcoming.js"></script><script>
 (function(){{var el=document.getElementById('up'),lim=+el.dataset.limit,t=new Date(),pad=function(n){{return('0'+n).slice(-2)}},
 today=t.getFullYear()+'-'+pad(t.getMonth()+1)+'-'+pad(t.getDate()),K={{live:'ライブ',release:'リリース',tieup:'タイアップ',event:'イベント',anniv:'記念日',media:'テレビ・ラジオ・配信',ticket:'チケット'}},
@@ -500,7 +500,8 @@ def build():
                 'var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){go();o.disconnect()}})},{threshold:.25});o.observe(b)})()</script>')
     recent = [e for e in T if e["date"] <= TODAY][-6:][::-1]
     body = f"""<section><h1>ようこそ、こっそり部屋へ。</h1>
-<p class="lead">2018年、YouTube に投稿された1本の「歌ってみた」から、「春を告げる」「色彩」「slash」、そしてアジア・北米・ヨーロッパのステージまで。白い仮面と青い髪のシンガー yama さんの歩みを、ファンがこっそり年表にまとめた非公式の部屋です。これからも毎月、新しいできごとを書き足していきます。</p></section>
+<p class="lead">yama さんの歩みを、あなたの思い出と一緒にたどれます。2018年、YouTube に投稿された1本の「歌ってみた」から、「春を告げる」「色彩」「slash」、そしてアジア・北米・ヨーロッパのステージまで。一歩ずつ世界へ歌声を届けてきた、白い仮面と青い髪のシンガー yama さんと、曲を生んだ作詞・作曲のクリエイター、MV を手がけた映像・イラストの作り手の皆さんへの拍手を込めて、ファンがこっそり年表にまとめた非公式の部屋です。これからも毎月、新しいできごとを書き足していきます。</p>
+<p class="lead" style="margin-top:8px">あなたがいちばん好きな yama さんの曲は、どれですか？　見に来てくださって、ありがとうございます。</p></section>
 {upcoming_box(5)}
 {activity}
 <section><h2 class="sec-t">時代でたどる yama の歩み</h2><div class="eras">{"".join(era_cards)}</div></section>
@@ -511,12 +512,12 @@ def build():
     mosaic = '<div class="mosaic">' + "".join(
         f'<a href="{watch(MV[k]["id"])}" target="_blank" rel="noopener" title="{esc(MV[k]["title"])}"><img src="{thumb_url(MV[k]["id"])}" alt="{esc(MV[k]["title"])}"></a>'
         for k in top if k in MV) + "</div>"
-    page("index.html", NAME, "シンガー yama さんの歩みを、2018年の歌ってみたから今まで年表にまとめた非公式ファンサイト。ライブ・リリース・MV・セットリストも。毎月更新。", body, hero=mosaic)
+    page("index.html", NAME, "シンガー yama さんの歩みを、あなたの思い出と一緒にたどれる非公式ファンサイト。2018年の歌ってみたから今までを年表に。ライブ・リリース・MV・セットリストも。毎月更新。", body, hero=mosaic)
 
     # 全年表
     jump = " ".join(f'<a href="#y{y}">{y}</a>' for y in YEARS)
     page("timeline.html", "全部の年表", "yama さんの活動を最初の歌ってみたから最新ニュースまで、すべて時系列で。",
-         f'<section><h1>全部の年表</h1><p class="lead">水色の印は特に大きなできごとです。 年へジャンプ: {jump}</p></section><section>{timeline(T)}</section>',
+         f'<section><h1>全部の年表</h1><p class="lead">yama さんの歩みを、最初から通してたどれます。水色の印は特に大きなできごとです。 年へジャンプ: {jump}</p></section><section>{timeline(T)}</section>',
          crumb=["全部の年表"])
 
     # 時代ページ
@@ -539,8 +540,8 @@ def build():
 
     # カテゴリページ
     groups = {"release": {"release", "feat", "cover", "youtube"}, "live": {"live"}, "tieup": {"tieup", "media", "award"}}
-    leads = {"release": "配信シングル・アルバム・映像作品・客演・歌ってみたのできごと。", "live": "ワンマンライブ・ツアー・フェス出演の記録。",
-             "tieup": "映画・アニメ・ドラマのタイアップ、テレビ・ラジオ出演、受賞と記録。"}
+    leads = {"release": "yama さんの歌声が届けられた作品を、順にたどれます。配信シングル・アルバム・映像作品・客演・歌ってみたのできごと。", "live": "あの日の会場の記憶を、もう一度たどれます。ワンマンライブ・ツアー・フェス出演の記録。",
+             "tieup": "あの作品で出会った一曲に、また会えます。映画・アニメ・ドラマのタイアップ、テレビ・ラジオ出演、受賞と記録。"}
     tv_n = sum(len(v) for v in TIEUP.values())
     leads["tieup"] += f"アニメのノンクレジット映像や主題歌入りの予告など、タイアップ先の公式 YouTube 動画 {tv_n} 本ものせています。"
     for k, t in CAT_PAGES:
@@ -569,7 +570,7 @@ def build():
         cards = "".join(gcard(m) for m in ms)
         sec.append(f'<section><h2 class="sec-t">{lead}（{len(ms)}）</h2><div class="mvgrid">{cards}</div></section>')
     page("mv.html", "MV ギャラリー", "yama さんの MV・ライブ映像・feat.・歌ってみたを、YouTube 公式チャンネルへのリンクでまとめました。",
-         '<section><h1>MV ギャラリー</h1><p class="lead">サムネイルを押すと、YouTube（yama 公式チャンネル・各アーティスト公式）で動画が開きます。公開された順に並べています。</p></section>' + "".join(sec),
+         '<section><h1>MV ギャラリー</h1><p class="lead">yama さんの歌声と、映像・イラストで曲の世界を形にした作り手の皆さんの表現を、まとめて楽しめます。サムネイルを押すと、YouTube（yama 公式チャンネル・各アーティスト公式）で動画が開きます。公開された順に並べています。あなたのお気に入りの MV は、どれですか？</p></section>' + "".join(sec),
          crumb=["MV ギャラリー"])
 
     # 歌ってみた まとめ
@@ -587,7 +588,7 @@ def build():
     total = len(cov)
     jump = " ".join(f'<a href="#c{y}">{y}</a>' for y in cyears)
     page("covers.html", "歌ってみた まとめ", f"yama さんの歌ってみた {total} 曲を、YouTube に投稿された順にまとめました。",
-         f'''<section><h1>歌ってみた まとめ</h1><p class="lead">2018年3月の初投稿「暖かい生き物」から、オリジナル曲「春を告げる」の直前まで。yama さんが YouTube に投稿した歌ってみた（カバー）を、投稿された日の順に並べました。</p>
+         f'''<section><h1>歌ってみた まとめ</h1><p class="lead">yama さんの歌声の原点を、あなたも一緒にたどれます。2018年3月の初投稿「暖かい生き物」から、オリジナル曲「春を告げる」の直前まで。yama さんが YouTube に投稿した歌ってみた（カバー）を、投稿された日の順に並べました。原曲を生んだ作り手の皆さんにも感謝を込めて。あなたが最初に聴いた一曲は、どれですか？</p>
 <div class="stats"><div><b>{total}</b>曲</div><div><b>{cyears[0]}〜{cyears[-1]}</b>投稿年</div><div><b>{sum(1 for k in MV if k.startswith("feat:") or MV[k]["kind"] == "feat")}</b>feat.・BIN</div></div>
 <p style="margin:10px 0 0;font-size:14px">年へジャンプ: {jump}</p>
 <p class="notice" style="margin-top:12px">「bin」のカバーがきっかけで、作者のコメダワラさんたちとロックユニット BIN を結成しました。feat. や BIN の曲は <a href="{{R}}mv.html">MV ギャラリー</a> にまとめています。</p></section>
@@ -598,7 +599,7 @@ def build():
     xs = [e for e in T if e.get("x")][::-1]
     cards = "".join(f'<div><h3>{fmt(e["date"])}｜{esc(e["title"])}</h3>{x_embed(e["x"])}</div>' for e in xs)
     page("x.html", "公式Xまとめ", "yama さん・yama staff の公式 X から、デビュー・リリース・ツアーなど節目のポストを埋め込みでまとめました。",
-         '<section><h1>公式Xまとめ</h1><p class="lead">デビュー・リリース・ツアーなど節目のポストを、X の埋め込みで新しい順に並べています。最新の情報は '
+         '<section><h1>公式Xまとめ</h1><p class="lead">節目の瞬間を、公式の言葉でふり返れます。デビュー・リリース・ツアーなど節目のポストを、X の埋め込みで新しい順に並べています。最新の情報は '
          '<a href="https://x.com/douhwe" target="_blank" rel="noopener">@douhwe</a> と '
          '<a href="https://x.com/yama_official0" target="_blank" rel="noopener">@yama_official0</a> をご覧ください。</p></section>'
          f'<section><div class="xgrid">{cards}</div></section>', crumb=["公式Xまとめ"])
@@ -622,7 +623,7 @@ def build():
     n_mag = len({e["magazine"] for e in MAGS})
     jump = " ".join(f'<a href="#m{y}">{y}</a>' for y in myears)
     page("magazines.html", "雑誌インタビュー", f"yama さんの雑誌・Web のインタビューや対談 {len(MAGS)} 件を、yama さん・yama staff の公式 X の告知からまとめました。",
-         f'''<section><h1>雑誌インタビュー</h1><p class="lead">yama さん（@douhwe）と yama staff（@yama_official0）の公式 X で告知された、雑誌・Web メディアのインタビューや対談をまとめました。ボタンを押すと、その公式ポストが X の埋め込みで表示されます。記事・誌面の内容は各メディアでお楽しみください。</p>
+         f'''<section><h1>雑誌インタビュー</h1><p class="lead">yama さんの言葉に、誌面や Web でもっと触れられます。yama さん（@douhwe）と yama staff（@yama_official0）の公式 X で告知された、雑誌・Web メディアのインタビューや対談をまとめました。ボタンを押すと、その公式ポストが X の埋め込みで表示されます。記事・誌面の内容は各メディアでお楽しみください。</p>
 <div class="stats"><div><b>{len(MAGS)}</b>掲載</div><div><b>{n_print}</b>雑誌（紙）</div><div><b>{n_mag}</b>媒体</div><div><b>{myears[0]}〜{myears[-1]}</b>年</div></div>
 <div class="flt"><button class="on" data-f="all">すべて</button><button data-f="print">雑誌（紙）</button><button data-f="web">Web</button></div>
 <p style="margin:10px 0 0;font-size:14px">年へジャンプ: {jump}</p>
@@ -637,12 +638,12 @@ function go(){{window.twttr&&twttr.widgets?twttr.widgets.load(d):setTimeout(go,3
          crumb=["雑誌インタビュー"])
 
     page("schedule.html", "これからの予定", "yama さんのこれからのライブ・リリース・テレビ出演などの予定。毎週更新。",
-         '<section><h1>これからの予定</h1><p class="lead">ライブ・リリース・放送・チケットの予定をまとめています。</p></section>'
+         '<section><h1>これからの予定</h1><p class="lead">次に yama さんの歌声に会える日が、ひと目でわかります。ライブ・リリース・放送・チケットの予定をまとめています。</p></section>'
          + upcoming_box(80, "予定一覧", more=False), crumb=["これからの予定"])
 
     # この部屋について
     page("about.html", "この部屋について", "yamaファンのこっそり部屋について、運営方針とプライバシーポリシー。", """<section><h1>この部屋について</h1>
-<p>「yamaファンのこっそり部屋」は、シンガー yama さんを応援するファンがつくった<b>非公式</b>のファンサイトです。yama さん本人、所属事務所、レーベル（ソニー・ミュージックレーベルズ）とは一切関係ありません。</p>
+<p>「yamaファンのこっそり部屋」は、yama さんの歩みを、ファンのあなたが好きなときにたどれるようにつくった<b>非公式</b>のファンサイトです。yama さん本人、所属事務所、レーベル（ソニー・ミュージックレーベルズ）とは一切関係ありません。</p>
 <h2>この部屋でやっていること</h2><ul>
 <li>2018年の歌ってみたから今までのできごとを、年表にまとめています。ライブは 1 公演ずつ年表にのせています</li>
 <li>毎月、前の月のできごとを書き足します。これからの予定は毎週更新します</li>
@@ -653,6 +654,9 @@ function go(){{window.twttr&&twttr.widgets?twttr.widgets.load(d):setTimeout(go,3
 <li>広告・アフィリエイトは載せません</li>
 <li>歌詞の引用、公式の写真・イラスト・ロゴの複製・転載はしません。画像は、YouTube の公式動画のサムネイル（YouTube から直接表示し、動画にリンク）だけです。権利は各権利者に帰属します。削除のご依頼があればすぐに対応します</li>
 <li>素顔・プロフィールの詮索や、うわさ話・私生活に関することは書きません</li></ul>
+<h2>見に来てくださって、ありがとうございます</h2>
+<p>歌声で世界のステージへ進んできた yama さん、その曲を生んだ作詞・作曲のクリエイター、MV を手がけた映像・イラストの作り手の皆さん、そして応援を続けるファンの皆さんに、心から感謝しています。この部屋が、あなたの「好き」をもう一度たしかめる場所になればうれしいです。</p>
+<p>あなたの好きな yama さんの曲は、何ですか？</p>
 <h2>プライバシーポリシー</h2>
 <p>動画のサムネイルは YouTube（Google）から直接表示しているため、YouTube が Cookie などで情報を取得する場合があります。アクセスの傾向を知るために Google アナリティクスを使っています。Cookie を使って匿名のアクセス情報を集めますが、個人を特定する情報は集めません。ブラウザの設定で Cookie を無効にできます。</p>
 <h2>参考にしている情報源</h2><ul>
