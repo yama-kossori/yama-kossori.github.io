@@ -382,7 +382,6 @@ def sidebar():
 <div class="box"><h2>🎤 歌ってみた</h2><p class="note">yama さんの歌声の原点を、投稿順にたどれます。</p><ul><li><a href="{{R}}covers.html">歌ってみた まとめ（{sum(1 for k in MV if k.startswith("cover:"))} 曲）</a></li></ul></div>
 <div class="box"><h2>📚 雑誌インタビュー</h2><p class="note">yama さんの言葉に、誌面や Web でも触れられます。公式 X で告知されたインタビューや対談をまとめました。</p><ul><li><a href="{{R}}magazines.html">雑誌インタビュー まとめ（{len(MAGS)} 件）</a></li></ul></div>
 <div class="box"><h2>🐦 公式Xまとめ</h2><p class="note">節目の瞬間を、公式の言葉でふり返れます。</p><ul><li><a href="{{R}}x.html">公式Xまとめ（{sum(1 for e in T if e.get("x"))} 件）</a></li></ul></div>
-<div class="box"><h2>🫧 姉妹サイト</h2><p class="note">Ado さん・CLAN QUEEN の歩みもたどれる、こちらも非公式の年表サイトです。</p><ul><li><a href="https://ado-himitsukichi.github.io/" target="_blank" rel="noopener">Ado 非公式ワクワク秘密基地 →</a></li><li><a href="https://clanqueen-teikoku.github.io/" target="_blank" rel="noopener">CLAN QUEEN 秘密の帝国 →</a></li></ul></div>
 <div class="box"><h2>🗺 時代でたどる</h2><ul>{eras}</ul></div>
 <div class="box sticky"><h2>📅 年でたどる</h2><ul>{years}</ul>
 <h2 style="margin-top:14px">📣 公式はこちら</h2><ul>
