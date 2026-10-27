@@ -501,7 +501,7 @@ def build():
     recent = [e for e in T if e["date"] <= TODAY][-6:][::-1]
     body = f"""<section><h1>ようこそ、こっそり部屋へ。</h1>
 <p class="lead">yama さんの歩みを、あなたの思い出と一緒にたどれます。2018年、YouTube に投稿された1本の「歌ってみた」から、「春を告げる」「色彩」「slash」、そしてアジア・北米・ヨーロッパのステージまで。一歩ずつ世界へ歌声を届けてきた、白い仮面と青い髪のシンガー yama さんと、曲を生んだ作詞・作曲のクリエイター、MV を手がけた映像・イラストの作り手の皆さんへの拍手を込めて、ファンがこっそり年表にまとめた非公式の部屋です。これからも毎月、新しいできごとを書き足していきます。</p>
-<p class="lead" style="margin-top:8px">あなたがいちばん好きな yama さんの曲は、どれですか？　見に来てくださって、ありがとうございます。</p></section>
+<p class="lead" style="margin-top:8px">見に来てくださって、ありがとうございます。　あなたがいちばん好きな yama さんの曲は、どれですか？</p></section>
 {upcoming_box(5)}
 {activity}
 <section><h2 class="sec-t">時代でたどる yama の歩み</h2><div class="eras">{"".join(era_cards)}</div></section>
