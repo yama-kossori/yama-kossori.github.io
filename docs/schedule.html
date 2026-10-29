@@ -126,7 +126,7 @@ footer{background:var(--hd);color:#c8cde0;font-size:13px;text-align:center;paddi
 today=t.getFullYear()+'-'+pad(t.getMonth()+1)+'-'+pad(t.getDate()),K={live:'ライブ',release:'リリース',tieup:'タイアップ',event:'イベント',anniv:'記念日',media:'テレビ・ラジオ・配信',ticket:'チケット'},
 W='日月火水木金土',it=(window.YAMA_UPCOMING||[]).filter(function(e){return e.date>=today}).slice(0,lim);
 if(!it.length){el.innerHTML='<li class="empty">いま分かっている予定はありません。</li>';return}
-el.innerHTML=it.map(function(e){var d=new Date(e.date+'T00:00:00');return '<li><div class="d">'+(d.getMonth()+1)+'/'+d.getDate()+'<small>'+d.getFullYear()+'（'+W[d.getDay()]+'）</small></div><div><span class="k">'+(K[e.kind]||'')+'</span><div>'+e.title.replace(/[<>&]/g,'')+'</div></div></li>'}).join('')})();
+el.innerHTML=it.map(function(e){var d=new Date(e.date+'T00:00:00');return '<li><div class="d">'+(e.when?e.when[0]+'<small>'+e.when[1]+'</small>':(d.getMonth()+1)+'/'+d.getDate()+'<small>'+d.getFullYear()+'（'+W[d.getDay()]+'）</small>')+'</div><div><span class="k">'+(K[e.kind]||'')+'</span><div>'+e.title.replace(/[<>&]/g,'')+'</div></div></li>'}).join('')})();
 </script></main><aside class="side">
 <div class="box"><h2>🫧 この部屋について</h2><p class="note">yama さんの歩みを、2018年の歌ってみたから今まで、あなたと一緒にたどれる<b>非公式</b>の年表サイトです。ファンがこっそりつくり、毎月のできごとごとに書き足していきます。公式とは関係ありません。</p></div>
 <div class="box"><h2>🎤 歌ってみた</h2><p class="note">yama さんの歌声の原点を、投稿順にたどれます。</p><ul><li><a href="covers.html">歌ってみた まとめ（16 曲）</a></li></ul></div>
@@ -144,5 +144,5 @@ el.innerHTML=it.map(function(e){var d=new Date(e.date+'T00:00:00');return '<li><
 </aside></div>
 <footer>yamaファンのこっそり部屋 は、yama さんを応援するファンによる<b>非公式</b>のファンサイトです。yama さん本人・所属事務所・レーベルとは関係ありません。<br>
 掲載情報は公開されている報道・公式発表・ライブ記録サイトをもとにしています。最新・正確な情報は<a href="https://yamaofficial.com/" target="_blank" rel="noopener">公式サイト</a>でご確認ください。<br>
-画像ファイルの複製・転載はしていません。動画のサムネイルは YouTube から直接表示し、動画にリンクしています（権利は各権利者に帰属します）。 ／ <a href="about.html">この部屋について・プライバシー</a><br>最終更新: 2026-10-27</footer>
+画像ファイルの複製・転載はしていません。動画のサムネイルは YouTube から直接表示し、動画にリンクしています（権利は各権利者に帰属します）。 ／ <a href="about.html">この部屋について・プライバシー</a><br>最終更新: 2026-10-29</footer>
 </body></html>

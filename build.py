@@ -446,8 +446,24 @@ def upcoming_box(limit, title="これからの予定", more=True):
 today=t.getFullYear()+'-'+pad(t.getMonth()+1)+'-'+pad(t.getDate()),K={{live:'ライブ',release:'リリース',tieup:'タイアップ',event:'イベント',anniv:'記念日',media:'テレビ・ラジオ・配信',ticket:'チケット'}},
 W='日月火水木金土',it=(window.YAMA_UPCOMING||[]).filter(function(e){{return e.date>=today}}).slice(0,lim);
 if(!it.length){{el.innerHTML='<li class="empty">いま分かっている予定はありません。</li>';return}}
-el.innerHTML=it.map(function(e){{var d=new Date(e.date+'T00:00:00');return '<li><div class="d">'+(d.getMonth()+1)+'/'+d.getDate()+'<small>'+d.getFullYear()+'（'+W[d.getDay()]+'）</small></div><div><span class="k">'+(K[e.kind]||'')+'</span><div>'+e.title.replace(/[<>&]/g,'')+'</div></div></li>'}}).join('')}})();
+el.innerHTML=it.map(function(e){{var d=new Date(e.date+'T00:00:00');return '<li><div class="d">'+(e.when?e.when[0]+'<small>'+e.when[1]+'</small>':(d.getMonth()+1)+'/'+d.getDate()+'<small>'+d.getFullYear()+'（'+W[d.getDay()]+'）</small>')+'</div><div><span class="k">'+(K[e.kind]||'')+'</span><div>'+e.title.replace(/[<>&]/g,'')+'</div></div></li>'}}).join('')}})();
 </script>"""
+
+
+def vague(e):
+    """タイトルに「要確認」がある予定は、日付をぼかして when に「11月」「上旬（予定）」を入れ、タイトルから注記を外す。"""
+    t = e["title"]
+    if "要確認" not in t:
+        return e
+    m = int(e["date"][5:7])
+    pm = re.search(r"(\d+)\s*月\s*(上旬|中旬|下旬)予定", t)
+    part = pm.group(2) if pm else ("" if e["date"].endswith("-01") else ("上旬" if int(e["date"][8:]) <= 10 else "中旬" if int(e["date"][8:]) <= 20 else "下旬"))
+    if pm:
+        m = int(pm.group(1))
+    t = re.sub(r"[・／]?\s*\d+\s*月\s*(上旬|中旬|下旬)予定", "", t)
+    t = re.sub(r"[・／]?\s*(日付は)?要確認", "", t)
+    t = re.sub(r"（\s*）", "", t).replace("（・", "（").replace("・）", "）").strip()
+    return {**e, "title": t, "when": [f"{m}月", f"{part}（予定）"]}
 
 
 def write_upcoming():
@@ -460,6 +476,7 @@ def write_upcoming():
                 continue
             items.append({"date": d, "title": t, "kind": k})
     items.sort(key=lambda e: e["date"])
+    items = [vague(e) for e in items]
     open(os.path.join(OUT, "upcoming.js"), "w", encoding="utf-8").write(
         "window.YAMA_UPCOMING=" + json.dumps(items, ensure_ascii=False) + ";\n")
     return len(items)
@@ -652,8 +669,11 @@ function go(){{window.twttr&&twttr.widgets?twttr.widgets.load(d):setTimeout(go,3
 <p>ライブの「セットリスト」ボタンの中身は、setlist.fm にファンが投稿した記録をもとに、曲名を日本語に直したものです。公式発表ではないため、実際と違う場合があります。曲名が確認できなかったものは、setlist.fm の表記のままにしています。</p>
 <h2>やらないこと</h2><ul>
 <li>広告・アフィリエイトは載せません</li>
-<li>歌詞の引用、公式の写真・イラスト・ロゴの複製・転載はしません。画像は、YouTube の公式動画のサムネイル（YouTube から直接表示し、動画にリンク）だけです。権利は各権利者に帰属します。削除のご依頼があればすぐに対応します</li>
+<li>歌詞の引用、公式の写真・イラスト・ロゴの複製・転載はしません。画像は、YouTube の公式動画のサムネイル（YouTube から直接表示し、動画にリンク）だけです。権利は各権利者に帰属します</li>
 <li>素顔・プロフィールの詮索や、うわさ話・私生活に関することは書きません</li></ul>
+<h2>AI の使い方と、お問い合わせ</h2>
+<p>年表・紹介文の下書きにAIを使い、内容は運営者が公式の発表で確かめています。画像はアーティスト・作り手への敬意から、公式の埋め込みとサムネイルだけを使い、AIで作った絵は置いていません。</p>
+<p>削除のご依頼や誤りのご指摘は、<a href="https://x.com/masabee1029" target="_blank" rel="noopener">X @masabee1029</a> の DM（ダイレクトメッセージ）でお知らせください。すぐに対応します。</p>
 <h2>見に来てくださって、ありがとうございます</h2>
 <p>歌声で世界のステージへ進んできた yama さん、その曲を生んだ作詞・作曲のクリエイター、MV を手がけた映像・イラストの作り手の皆さん、そして応援を続けるファンの皆さんに、心から感謝しています。この部屋が、あなたの「好き」をもう一度たしかめる場所になればうれしいです。</p>
 <p>あなたの好きな yama さんの曲は、何ですか？</p>
