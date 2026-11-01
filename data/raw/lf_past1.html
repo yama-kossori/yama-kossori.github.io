@@ -1,65 +1,798 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<!DOCTYPE html>
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:mixi="http://mixi-platform.com/ns#" xmlns:fb="http://ogp.me/ns/fb#">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W46QF8G');</script>
+<!-- End Google Tag Manager -->
+<!-- AWS WAF JavaScript SDK -->
+<script type="text/javascript" src="https://72e81d3242ec.ap-northeast-1.sdk.awswaf.com/72e81d3242ec/948b01cd9074/challenge.js" defer></script>
+<meta name="title" content="yamaのライブ・コンサート | LiveFans(ライブファンズ)" />
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta http-equiv="Content-Script-Type" content="text/javascript" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
-<meta name="ROBOTS" content="NOINDEX" />
+<meta lang="ja" name="description" content="yamaのライブ・コンサート情報やセットリスト(セトリ)はLiveFansでチェック!ライブスケジュールやセットリストのほか、ライブ定番曲の統計や、ニュース・ライブレポートなどライブがもっと楽しくなる情報が満載です。">
+<meta lang="ja" name="keywords" content="yama,コンサート,ライブ,ツアー,フェス,セットリスト">
+<link href="/favicon.ico" type="image/x-icon" rel="icon"/><link href="/favicon.ico" type="image/x-icon" rel="shortcut icon"/>	<link rel="stylesheet" href="/css/common/fa-solid.css">
+	<link rel="stylesheet" href="/css/common/fontawesome.css">
+<!--[if lt IE 9]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1?20140220(beta4)/IE9.js"></script>
+<![endif]-->
+<script type="text/javascript" src="https://static.livefans.jp/js/google_analytics.js?update=20170713"></script><script type="text/javascript" src="https://static.livefans.jp/js/common/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="https://static.livefans.jp/js/common/jquery.page-scroller-308.js"></script>
+<script type="text/javascript" src="https://static.livefans.jp/js/common/jquery.cookie.js"></script>
+<script type="text/javascript" src="https://static.livefans.jp/js/common/jquery.custom.js?update=20180130"></script>
+<script type="text/javascript" src="https://static.livefans.jp/js/common/layzr.min.js" async="async"></script>
+<script type="text/javascript" src="https://static.livefans.jp/js/common/jquery.search_custom.js?verupdate=20160215"></script>
+<script type="text/javascript" src="https://static.livefans.jp/js/common/jquery.ajaxtablist.js?verupdate=20140605"></script>
+<link rel="stylesheet" type="text/css" href="/css/common/cake.common.css?verupdate=202608031400"/>
+<link rel="stylesheet" type="text/css" href="/css/common/search.css?verupdate=202508051200"/>
+<script type="text/javascript" src="https://static.livefans.jp/js/common/jqModal.js?verupdate=20140530"></script>
+<link rel="stylesheet" type="text/css" href="https://static.livefans.jp/css/common/jqModal.css"/>
+<script type="text/javascript" src="https://static.livefans.jp/js/common/aim_application.js?verupdate=202308171800"></script>
+<script type="text/javascript" src="https://static.livefans.jp/js/common/load-image.all.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://static.livefans.jp/js/jquery/swiper.min.css"/>
+<script type="text/javascript" src="https://static.livefans.jp/js/jquery/swiper.jquery.min.js"></script>
+<script type="text/javascript" src="https://static.livefans.jp/js/jquery/swiper.custom.js?verupdate=20190418"></script>
 
-<meta lang="ja" name="description" content="">
-<meta lang="ja" name="keywords" content="">
 
 
-<title>アーティスト過去公演|LiveFans</title>
+
+<title>yamaのライブ・コンサート | LiveFans(ライブファンズ)</title>
+<meta name="google-site-verification"content="HbO1KjIbp5-oRlHZKAhgwIPmf1vFJdA-NCSPc9yJ7zo" />
+
+
+<meta name="twitter:card" content="summary"><meta name="twitter:site" content="@livefans">
+<meta name="twitter:creator" content="@livefans">
+<meta name="twitter:title" content="yamaのライブ・コンサート | LiveFans(ライブファンズ)">
+<meta name="twitter:image:src" content="https://www.livefans.jp/img/common/Icon-120.png"><meta name="twitter:domain" content="https://www.livefans.jp/">
+
+<meta property="og:site_name" content="livefans.jp" />
+<meta property="og:title" content="yamaのライブ・コンサート | LiveFans(ライブファンズ)" />
+<meta property="og:description" content="yamaのライブ・コンサート情報やセットリスト(セトリ)はLiveFansでチェック!ライブスケジュールやセットリストのほか、ライブ定番曲の統計や、ニュース・ライブレポートなどライブがもっと楽しくなる情報が満載です。" />
+<meta property="og:url" content="https://www.livefans.jp/search/artist/141490" />
+<meta property="fb:app_id" content="528283240567901" />
+<meta property="og:type" content="article" /><meta property="og:image" content="https://www.livefans.jp/img/common/fb_likeicon.jpg" />
+
+
+<script async src="https://fundingchoicesmessages.google.com/i/pub-8547575683716908?ers=1"></script>
+<script>(function(){function signalGooglefcPresent(){if(!window.frames['googlefcPresent']){if(document.body){const iframe=document.createElement('iframe');iframe.style='width:0;height:0;border:none;z-index:-1000;left:-1000px;top:-1000px;';iframe.style.display='none';iframe.name='googlefcPresent';document.body.appendChild(iframe);}else{setTimeout(signalGooglefcPresent,0);}}}signalGooglefcPresent();})();</script>
+<script async='async' src='https://flux-cdn.com/client/slp/flux_livefans_AS_PB_AT.min.js'></script>
+<script type="text/javascript">
+				  var pbjs = pbjs || {};
+				  pbjs.que = pbjs.que || [];
+				</script>
+<script async='async' src='https://securepubads.g.doubleclick.net/tag/js/gpt.js'></script>
+<script type="text/javascript">
+					  var googletag = googletag || {};
+					  googletag.cmd = googletag.cmd || [];
+					</script>
+<script type="text/javascript">
+				  var readyBids = {
+				    prebid: false,
+					google: false			    
+				  };
+				  var failSafeTimeout = 3e3;
+				  // when both APS and Prebid have returned, initiate ad request
+				  var launchAdServer = function () {if (!readyBids.prebid) {return;
+				    }
+				    requestAdServer();
+				  };
+				  var requestAdServer = function () {
+				    if (!readyBids.google) {
+				      readyBids.google = true;
+				      googletag.cmd.push(function () {
+				        pbjs.que.push(function () {
+				          pbjs.setTargetingForGPTAsync();
+				        });
+				        googletag.pubads().refresh();
+				      });
+				    }
+				  };
+				</script><script type="text/javascript">
+                    googletag.cmd.push(function () {
+                        // add slot (defineSoltの記述
+						googletag.defineSlot('/9176203,104311091/1601951', ['fluid',[1, 1],[728, 90]], 'dfp-banner-23-0').addService(googletag.pubads());
+						googletag.defineSlot('/9176203,104311091/1601953', ['fluid',[1, 1],[300, 600],[300, 250]], 'dfp-banner-27-0').addService(googletag.pubads());
+						googletag.defineSlot('/9176203,104311091/1601954', ['fluid',[1, 1],[300, 250],[300, 600]], 'dfp-banner-28-0').addService(googletag.pubads());
+						googletag.pubads().enableLazyLoad({
+							fetchMarginPercent: 30,
+							renderMarginPercent: 30,
+							mobileScaling: 2.0
+						});
+                        googletag.pubads().enableSingleRequest();
+                        googletag.pubads().disableInitialLoad();
+                        googletag.enableServices();
+                        pbjs.que.push(function () {
+                            pbFlux.prebidBidder();
+                        });
+                    });
+                </script>
+<script type="text/javascript">
+				  setTimeout(function () {
+				    requestAdServer();
+				  }, failSafeTimeout);
+				</script>
 </head>
 
-<body>
-<div id="relLiveList">
+<body id="body_selection">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W46QF8G"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- // liveood banner -->
+<div id="bannerLf">
+</div>
+<div id="bannerRt">
+</div>
+
+
+
+
+
+	<!-- // HEADER -->
+	<div id="header">
+		<div class="seoArea">
+			<div class="inner">
+				<p class="seoTxt">ライブ・セットリスト情報サービス</p>
+				<p class="numbers">登録アーティスト数：128,618件　登録コンサート数：1,519,761件　登録セットリスト数：480,311件</p>
+			</div>
+		</div>
+		<!-- //.SEOAREA -->
+		<div id="headerMiddle" class="inner">
+			<h1 class="logo"><a href="/"><img src="https://static.livefans.jp/img/common/img-logo.svg" alt="ライブ・セットリスト情報サービス - LiveFans (ライブファンズ)" width="147" height="34"/></a></h1>
+			<div id="bannerHeaderTop" class="bannerBox">
+				
+<!-- /9176203,104311091/1601951 -->
+<div id='dfp-banner-23-0' class='adCenter' style='height:90px; width:728px;'>
+<script>
+googletag.cmd.push(function() { googletag.display('dfp-banner-23-0'); });
+</script>
+</div>			</div>
+			<!-- //#BANNERHEADERTOP -->
+			<ul class="snsNav"><li><a href="https://x.com/livefans" target="_blank" onClick="ga('send', 'event', '外部リンク', '公式SNSリンククリック', 'yamaのライブ・コンサート | LiveFans(ライブファンズ),https://www.livefans.jp/search/artist/141490?year=before&amp;sort=e1,ヘッダー,twitter');"><img src="https://static.livefans.jp/img/common/sns/icon-X.svg" alt="twitter" height="32" width="32"/></a></li><li><a href="https://www.facebook.com/livefans" target="_blank" onClick="ga('send', 'event', '外部リンク', '公式SNSリンククリック', 'yamaのライブ・コンサート | LiveFans(ライブファンズ),https://www.livefans.jp/search/artist/141490?year=before&amp;sort=e1,ヘッダー,facebook');"><img src="https://static.livefans.jp/img/common/sns/icon-facebook.svg" alt="facebook" height="32" width="32"/></a></li><li><a href="https://www.youtube.com/channel/UCfH5b3DhV7AL-p0yX_zizTA" target="_blank" onClick="ga('send', 'event', '外部リンク', '公式SNSリンククリック', 'yamaのライブ・コンサート | LiveFans(ライブファンズ),https://www.livefans.jp/search/artist/141490?year=before&amp;sort=e1,ヘッダー,youtube');"><img src="https://static.livefans.jp/img/common/sns/icon-youtube.svg" alt="youtubeチャンネル" height="32" width="32"/></a></li><li><a href="https://open.spotify.com/user/nb3gnvy7qphzbzt8zgeiw4tms?si=-yqPoMdkThSm89_7Adk5tg" target="_blank" onClick="ga('send', 'event', '外部リンク', '公式SNSリンククリック', 'yamaのライブ・コンサート | LiveFans(ライブファンズ),https://www.livefans.jp/search/artist/141490?year=before&amp;sort=e1,ヘッダー,spotify');"><img src="https://static.livefans.jp/img/common/sns/icon-spotify.png" alt="spotify" height="32" width="32"/></a></li></ul>		</div>
+		<!-- //HEADERMIDDLE -->
+		<div id="headNav">
+			<ul class="inner">
+				<!--<li><a href="/">ホーム</a></li>-->
+				<li><a href="/setlist">セットリスト</a></li>
+				<!--<li><a href="/live">ライブ・フェス情報</a></li>-->
+				<li><a href="/artist">アーティスト</a></li>
+				<li><a href="/venue">会場</a></li>
+				<li><a href="/tickets">チケット</a></li>
+				<li><a href="/search/online?option=1&amp;setlist=0&amp;online=on&amp;year=after&amp;sort=e2">オンラインライブ</a></li>
+				<li><a href="/matome">編集部</a></li>
+				<li><a href="/report">レポート</a></li>
+				<!--<li><a href="/column">連載</a></li>-->
+				<li><a href="/news">ニュース</a></li>
+				<li><a href="/live_qa" target="new">ライブQ&A</a></li>
+				<li><a href="/special">企画</a></li>
+								<li><a href="/rank">ランキング</a></li>
+				<li  class="livefansPush"><a href="/push"><img src="https://static.livefans.jp/img/images/push_artist/common/livefanspushB.svg" width="60" height="34" alt="LiveFans Push!"/></a></li>			</ul>
+		</div>
+		<!-- //#HEADNAV -->
+		<!-- // BillboardLIVE -->
+		<!--<h6><a href="/billboard-live"><img src="/img/common/navBlbd.gif" alt="BillboardLIVE" width="147" height="29"/></a></h6>-->
+		<!-- // BillboardLIVE -->
+		<!-- <p class="menubnr"><a href="/tvguide?ref=menu"><img src="/img/data/nav_tvguide.png" alt="LiveFans 音楽番組ガイド" width="147" height="29"/></a></p>-->
+	</div>
+	<!-- // HEADER -->
+
+	<!-- // WRAP -->
+	<div id="wrap">
+
+
+
+<!-- // CONTAINER -->
+<div id="container">
+
+
+<!-- //#CONTAINERHEAD -->
+<div id="containerHead">
+
+<div class="left">
+<!-- // SEARCHBOX -->
+<div id="searchBox">
+<form name="searchBox" action="/search" onsubmit="return check_keyword()">
+<select name="option">
+<option value="1" >すべて</option>
+<option value="2" >セットリストを探す</option>
+<option value="6" >アーティストを探す</option>
+<option value="3" >ライブを探す</option>
+<option value="4" >フェスを探す</option>
+<!-- <option value="5" >ツアー</option> -->
+<!-- <option value="7" >ライブレポート</option> -->
+<!-- <option value="8" >特集</option> -->
+</select>
+<input type="text" name="keyword" id ="keyword" accesskey="s" value="" maxlength="50" />
+<p><input type="submit" id="seach_btn" value="検 索" /></p>
+
+<p class="narrowBtn">ジャンル検索</p>
+
+<div class="searchBoxIn" style="display:none">
+<dl>
+<dt>音楽ジャンル</dt><dd>
+<select name="genre">
+<option value="all">すべて</option>
+
+<option value="B1"  >ポップス</option>
+<option value="B2"  >ロック</option>
+<option value="B3"  >オルタナティブ／パンク</option>
+<option value="B4"  >ハードロック／メタル</option>
+<option value="B5"  >フォーク／ニューミュージック</option>
+<option value="B6"  >ヒップホップ／ラップ</option>
+<option value="B7"  >R&B／ソウル</option>
+<option value="B8"  >レゲエ</option>
+<option value="B9"  >ブルース</option>
+<option value="B12"  >エレクトロニカ／ダンス</option>
+<option value="B14"  >ジャズ／フュージョン</option>
+<option value="B15"  >クラシック</option>
+<option value="B16"  >イージーリスニング</option>
+<option value="B17"  >歌謡曲</option>
+<option value="B18"  >演歌</option>
+<option value="B19"  >日本伝統音楽／民謡</option>
+<option value="B20"  >アイドル</option>
+<option value="B21"  >アニメ／ゲーム／声優</option>
+<option value="B22"  >ヴィジュアル系</option>
+<option value="B23"  >K-POP</option>
+<option value="B24"  >アジア／ワールド</option>
+<option value="B28"  >ミュージカル／演劇</option>
+<option value="B99"  >その他</option></select></dd>
+</dl>
+
+</div>
+</form>
+</div>
+<!-- // SEARCHBOX -->
+
+<div id="headline"><div>
+<dl><dt>[2026/10/27] </dt><dd><a href="https://www.livefans.jp/news/info/592?ref=headline" target="new" >LiveFansサービス再開のお知らせ</a></dd>
+</dl>
+</div>
+</div><div class="btn"><a href="/events" class="opalink">新規情報投稿</a></div>
+</div>
+<!-- //.LEFT -->
+<div class="right">
+<div class="login"><a href=/users/login><img src="https://static.livefans.jp/img/common/btn-login.png" alt="ログイン・新規登録" height="93" width="226"/></a></div><input type="hidden" id="user_id" value="" />
+</div>
+<!-- //.RIGHT -->
+
+</div>
+<!-- //#CONTAINERHEAD -->
+
+<div id="content">	<!-- // CONTENT -->
+
+<h3 class="searchedTxt">開催済み,<strong><a href="/artists/141490">“yama”</a></strong>のライブ・コンサート：<span>213件</span></h3>
+<!--
+<ul class="homeTab nopscr">
+<li><a href="#" class="selected">公演一覧</a></li>
+</ul>
+-->
+
+
+<div id="schBox" class="grayBack nopscr">
+
+<div class="whiteBack artistBlock">	<!--// ArtistName --> 
+<a href="/artists/141490" class="artistimg"><img src="https://i.scdn.co/image/ab67616100005174102509e6ae5000293ad834c5" alt="yama" width="80" height="80" /></a> 
+<h3><a href="/artists/141490">yama</a></h3> 
+<p style="margin-top: 5px;"></p> 
+<p class="goArtist"><a href="/artists/141490">アーティスト情報を見る</a></p> 
+</div>	<!--// ArtistName --> 
+<!-- // SEARCHBOX -->
+<div id="narrowsDown">
+<form action="#">
+
+<div class="narrowSearchBoxIn" style="padding: 0px;">
+	<dl style="padding-left: 0px;">
+
+<dt>開催年</dt><dd class="dateSelect">
+<select onChange="var tmp_url='https://www.livefans.jp/search/artist/141490?setlist=0&online=&year='+this.options[this.selectedIndex].value; location.href=tmp_url;">
+<option value="">すべて</option>
+<option value='before&sort=e1' selected>開催済み</option>
+<option value='after&sort=e2' >開催予定</option>
+<option value='2027&sort=e1' >2027</option>
+<option value='2026&sort=e1' >2026</option>
+<option value='2025&sort=e1' >2025</option>
+<option value='2024&sort=e1' >2024</option>
+<option value='2023&sort=e1' >2023</option>
+<option value='2022&sort=e1' >2022</option>
+<option value='2021&sort=e1' >2021</option>
+<option value='2020&sort=e1' >2020</option>
+</select>
+</dd>
+</dl>
+<ul>
+<li><input type="checkbox" id="c01" name="setlist"  onclick="location.href='https://www.livefans.jp/search/artist/141490?setlist=on&year=before&sort=e1'"/> <label for="c01">セットリストあり</label></li>
+<li><input type="checkbox" id="c02" name="online"  onclick="location.href='https://www.livefans.jp/search/artist/141490?online=on&year=before&sort=e1'"/> <label for="c02">オンラインライブ</label></li>
+</ul>
+</div>
+</form>
+</div>
+<!-- // SEARCHBOX --><p class="pageNate2">
+表示順：<select onChange="var tmp_url='https://www.livefans.jp/search/artist/141490?setlist=0&online=&year=before&sort='+this.options[this.selectedIndex].value; location.href=tmp_url;">
+
+<option value='e1'  selected>開催日降順</option>
+<option value='e2'>開催日昇順</option>
+</select>
+</p>
+
+<p class="pageNate">
+<span class="prev">≪Prev</span>｜<span class="current">1</span>｜<span><a href="/search/artist/141490/page:2?&amp;year=before&amp;sort=e1#schBox">2</a></span>｜<span><a href="/search/artist/141490/page:3?&amp;year=before&amp;sort=e1#schBox">3</a></span>｜<span><a href="/search/artist/141490/page:4?&amp;year=before&amp;sort=e1#schBox">4</a></span>｜<span><a href="/search/artist/141490/page:5?&amp;year=before&amp;sort=e1#schBox">5</a></span>｜…<span><a href="/search/artist/141490/page:11?&amp;year=before&amp;sort=e1#schBox" rel="last">11</a></span>｜<span class="next"><a href="/search/artist/141490/page:2?&amp;year=before&amp;sort=e1#schBox" rel="next">Next≫</a></span></p>
 
 <div class="whiteBack midBox fes">
-<a href="/events/1948170"><img src="https://i.scdn.co/image/ab67616100005174102509e6ae5000293ad834c5" alt="" width="120" height="120" /></a>
-<h3 class="artistName"><a href="/events/1948170">Rockroshi Starry Music Festival</a></h3>
-<p class="date">2026/10/11 (日) 12:00</p>
-<address>＠DAICHI STAGE at 六呂師⾼原 (福井県)</address>
+<a href="/events/1948170" ><img src="https://i.scdn.co/image/ab67616100005174102509e6ae5000293ad834c5" alt="" width="120" height="120" /></a>
+<h3 class="artistName"><a href="/events/1948170" >Rockroshi Starry Music Festival</a></h3>
+<p class="date">2026/10/11 (日) 12:00
+<br><span class="address">＠DAICHI STAGE at 六呂師⾼原 (福井県)</span>
+</p>
 <p class="guestArtist">[出演] yama</a></p>
+
 <p class="attribute">レビュー：--件
 </p>
-<div class="icons"><span class="ticon list"><a href="/events/1948170">セットリスト</a></span></div>
-<div class="icons"><span class="nomicon nomclip artist_bt_01"><a href="/clip" title="クリップする">0</a></span><span class="nomicon nomgone artist_bt_01"><a href="/clip" title="参加した" ">1</a></span></div><h6 class="rbnFesSimple"><a href="/events/1948170"><img src="https://static.livefans.jp/img/common/ribbonFes.png" alt="Fes" width="48" height="48" /></a></h6>
+<div class="icons"><span class="ticon list"><a href="/events/1948170" >セットリスト</a></span></div>
+<div class="icons"><span class="nomicon nomclip artist_bt_01"><a href="/clip" title="クリップする">0</a></span><span class="nomicon nomgone artist_bt_01"><a href="/clip" title="参加した" ">1</a></span></div><h6 class="rbnFes"><a href="/events/1948170" ><img src="https://static.livefans.jp/img/common/ribbonFes.png" alt="Fes" width="48" height="48"/></a></h6>
 </div>
 <div class="whiteBack midBox fes">
-<a href="/events/1955532"><img src="https://i.scdn.co/image/ab67616100005174102509e6ae5000293ad834c5" alt="" width="120" height="120" /></a>
-<h3 class="artistName"><a href="/events/1955532">KOYABU SONIC 2026</a></h3>
-<p class="date">2026/09/23 (水) </p>
-<address>＠インテックス大阪 4～5号館 (大阪府)</address>
+<a href="/events/1955532" ><img src="https://i.scdn.co/image/ab67616100005174102509e6ae5000293ad834c5" alt="" width="120" height="120" /></a>
+<h3 class="artistName"><a href="/events/1955532" >KOYABU SONIC 2026</a></h3>
+<p class="date">2026/09/23 (水) 
+<br><span class="address">＠インテックス大阪 4～5号館 (大阪府)</span>
+</p>
 <p class="guestArtist">[出演] yama</a></p>
+
 <p class="attribute">レビュー：--件
 </p>
-<div class="icons"><span class="ticon list"><a href="/events/1955532">セットリスト</a></span></div>
-<div class="icons"><span class="nomicon nomclip artist_bt_01"><a href="/clip" title="クリップする">0</a></span><span class="nomicon nomgone artist_bt_01"><a href="/clip" title="参加した" ">1</a></span></div><h6 class="rbnFesSimple"><a href="/events/1955532"><img src="https://static.livefans.jp/img/common/ribbonFes.png" alt="Fes" width="48" height="48" /></a></h6>
+<div class="icons"><span class="ticon list"><a href="/events/1955532" >セットリスト</a></span></div>
+<div class="icons"><span class="nomicon nomclip artist_bt_01"><a href="/clip" title="クリップする">0</a></span><span class="nomicon nomgone artist_bt_01"><a href="/clip" title="参加した" ">1</a></span></div><h6 class="rbnFes"><a href="/events/1955532" ><img src="https://static.livefans.jp/img/common/ribbonFes.png" alt="Fes" width="48" height="48"/></a></h6>
 </div>
 <div class="whiteBack midBox fes">
-<a href="/events/1951475"><img src="https://i.scdn.co/image/ab67616100005174102509e6ae5000293ad834c5" alt="" width="120" height="120" /></a>
-<h3 class="artistName"><a href="/events/1951475">ROCK IN JAPAN FESTIVAL 2026</a></h3>
-<p class="date">2026/09/19 (土) 17:05</p>
-<address>＠HILLSIDE STAGE at 千葉市蘇我スポーツ公園 (千葉県)</address>
+<a href="/events/1951475" ><img src="https://i.scdn.co/image/ab67616100005174102509e6ae5000293ad834c5" alt="" width="120" height="120" /></a>
+<h3 class="artistName"><a href="/events/1951475" >ROCK IN JAPAN FESTIVAL 2026</a></h3>
+<p class="date">2026/09/19 (土) 17:05
+<br><span class="address">＠HILLSIDE STAGE at 千葉市蘇我スポーツ公園 (千葉県)</span>
+</p>
 <p class="guestArtist">[出演] yama</a></p>
+
 <p class="attribute">レビュー：--件
 </p>
-<div class="icons"><span class="ticon list"><a href="/events/1951475">セットリスト</a></span></div>
-<div class="icons"><span class="nomicon nomclip artist_bt_01"><a href="/clip" title="クリップする">0</a></span><span class="nomicon nomgone artist_bt_01"><a href="/clip" title="参加した" ">1</a></span></div><h6 class="rbnFesSimple"><a href="/events/1951475"><img src="https://static.livefans.jp/img/common/ribbonFes.png" alt="Fes" width="48" height="48" /></a></h6>
+<div class="icons"><span class="ticon list"><a href="/events/1951475" >セットリスト</a></span></div>
+<div class="icons"><span class="nomicon nomclip artist_bt_01"><a href="/clip" title="クリップする">0</a></span><span class="nomicon nomgone artist_bt_01"><a href="/clip" title="参加した" ">1</a></span></div><h6 class="rbnFes"><a href="/events/1951475" ><img src="https://static.livefans.jp/img/common/ribbonFes.png" alt="Fes" width="48" height="48"/></a></h6>
 </div>
 <div class="whiteBack midBox fes">
-<a href="/events/1938226"><img src="https://i.scdn.co/image/ab67616100005174102509e6ae5000293ad834c5" alt="" width="120" height="120" /></a>
-<h3 class="artistName"><a href="/events/1938226">25th ANNIVERSARY SUMMER SONIC 2026</a></h3>
-<p class="date">2026/08/16 (日) 17:25</p>
-<address>＠Spotify Stage at SUMMER SONIC 2026会場 [ZOZOマリンスタジアム / 幕張メッセ] (千葉県)</address>
+<a href="/events/1938226" ><img src="https://i.scdn.co/image/ab67616100005174102509e6ae5000293ad834c5" alt="" width="120" height="120" /></a>
+<h3 class="artistName"><a href="/events/1938226" >25th ANNIVERSARY SUMMER SONIC 2026</a></h3>
+<p class="date">2026/08/16 (日) 17:25
+<br><span class="address">＠Spotify Stage at SUMMER SONIC 2026会場 [ZOZOマリンスタジアム / 幕張メッセ] (千葉県)</span>
+</p>
 <p class="guestArtist">[出演] yama</a></p>
+
 <p class="attribute">レビュー：--件
 </p>
-<div class="icons"><span class="ticon list"><a href="/events/1938226">セットリスト</a></span></div>
-<div class="icons"><span class="nomicon nomclip artist_bt_01"><a href="/clip" title="クリップする">0</a></span><span class="nomicon nomgone artist_bt_01"><a href="/clip" title="参加した" ">3</a></span></div><h6 class="rbnFesSimple"><a href="/events/1938226"><img src="https://static.livefans.jp/img/common/ribbonFes.png" alt="Fes" width="48" height="48" /></a></h6>
-</div><p class="goMore"><a href="/search/artist/141490?year=before">ライブ・コンサート情報をもっと見る</a></p></div>
+<div class="icons"><span class="ticon list"><a href="/events/1938226" >セットリスト</a></span></div>
+<div class="icons"><span class="nomicon nomclip artist_bt_01"><a href="/clip" title="クリップする">0</a></span><span class="nomicon nomgone artist_bt_01"><a href="/clip" title="参加した" ">3</a></span></div><h6 class="rbnFes"><a href="/events/1938226" ><img src="https://static.livefans.jp/img/common/ribbonFes.png" alt="Fes" width="48" height="48"/></a></h6>
+</div>
+<div class="whiteBack midBox fes">
+<a href="/events/1952566" ><img src="https://i.scdn.co/image/ab67616100005174102509e6ae5000293ad834c5" alt="" width="120" height="120" /></a>
+<h3 class="artistName"><a href="/events/1952566" >RISING SUN ROCK FESTIVAL 2026 in EZO</a></h3>
+<p class="date">2026/08/14 (金) 18:00
+<br><span class="address">＠EARTH TENT at 石狩湾新港樽川ふ頭横野外特設ステージ (北海道)</span>
+</p>
+<p class="guestArtist">[出演] yama</a></p>
+
+<p class="attribute">レビュー：--件
+</p>
+<div class="icons"><span class="ticon list"><a href="/events/1952566" >セットリスト</a></span></div>
+<div class="icons"><span class="nomicon nomclip artist_bt_01"><a href="/clip" title="クリップする">0</a></span><span class="nomicon nomgone artist_bt_01"><a href="/clip" title="参加した" ">3</a></span></div><h6 class="rbnFes"><a href="/events/1952566" ><img src="https://static.livefans.jp/img/common/ribbonFes.png" alt="Fes" width="48" height="48"/></a></h6>
+</div>
+<div class="whiteBack midBox fes">
+<a href="/events/1945735" ><img src="https://i.scdn.co/image/ab67616100005174102509e6ae5000293ad834c5" alt="" width="120" height="120" /></a>
+<h3 class="artistName"><a href="/events/1945735" >CENTRAL MUSIC &amp; ENTERTAINMENT FESTIVAL 2026</a></h3>
+<p class="date">2026/08/08 (土) 19:00
+<br><span class="address">＠Zepp New Taipei (台湾)</span>
+</p>
+<p class="guestArtist">[出演] yama</a></p>
+
+<p class="attribute">レビュー：--件
+</p>
+<div class="icons"></div>
+<div class="icons"><span class="nomicon nomclip artist_bt_01"><a href="/clip" title="クリップする">0</a></span><span class="nomicon nomgone artist_bt_01"><a href="/clip" title="参加した" ">1</a></span></div>
+</div>
+<div class="whiteBack midBox fes">
+<a href="/events/1915530" ><img src="https://i.scdn.co/image/ab67616100005174102509e6ae5000293ad834c5" alt="" width="120" height="120" /></a>
+<h3 class="artistName"><a href="/events/1915530" >OSAKA GIGANTIC MUSIC FESTIVAL 2026 -THANKS 10TH GIGA-</a></h3>
+<p class="date">2026/08/02 (日) 18:35
+<br><span class="address">＠SKY ARENA STAGE at 舞洲スポーツアイランド (大阪府)</span>
+</p>
+<p class="guestArtist">[出演] yama</a></p>
+
+<p class="attribute">レビュー：--件
+</p>
+<div class="icons"><span class="ticon list"><a href="/events/1915530" >セットリスト</a></span></div>
+<div class="icons"><span class="nomicon nomclip artist_bt_01"><a href="/clip" title="クリップする">0</a></span><span class="nomicon nomgone artist_bt_01"><a href="/clip" title="参加した" ">3</a></span></div><h6 class="rbnFes"><a href="/events/1915530" ><img src="https://static.livefans.jp/img/common/ribbonFes.png" alt="Fes" width="48" height="48"/></a></h6>
+</div>
+<div class="whiteBack midBox fes">
+<a href="/events/1922473" ><img src="https://i.scdn.co/image/ab67616100005174102509e6ae5000293ad834c5" alt="" width="120" height="120" /></a>
+<h3 class="artistName"><a href="/events/1922473" >NUMBER SHOT 2026</a></h3>
+<p class="date">2026/08/01 (土) 17:30
+<br><span class="address">＠のぼせもんSTAGE at NUMBER SHOT 2026 会場[みずほPayPayドーム福岡 / シーサイドももち海浜公園地行浜ビーチ] (福岡県)</span>
+</p>
+<p class="guestArtist">[出演] yama</a></p>
+
+<p class="attribute">レビュー：--件
+</p>
+<div class="icons"><span class="ticon list"><a href="/events/1922473" >セットリスト</a></span></div>
+<div class="icons"><span class="nomicon nomclip artist_bt_01"><a href="/clip" title="クリップする">0</a></span><span class="nomicon nomgone artist_bt_01"><a href="/clip" title="参加した" ">1</a></span></div><h6 class="rbnFes"><a href="/events/1922473" ><img src="https://static.livefans.jp/img/common/ribbonFes.png" alt="Fes" width="48" height="48"/></a></h6>
+</div>
+<div class="whiteBack midBox fes">
+<a href="/events/1959535" ><img src="https://i.scdn.co/image/ab67616100005174102509e6ae5000293ad834c5" alt="" width="120" height="120" /></a>
+<h3 class="artistName"><a href="/events/1959535" >2026 FIM世界耐久選手権 &quot;コカ·コーラ&quot;鈴鹿8時間耐久ロードレース 第47回大会 8FES Liveステージ</a></h3>
+<p class="date">2026/07/05 (日) 17:30
+<br><span class="address">＠鈴鹿サーキット 8フェス!LIVEステージ (三重県)</span>
+</p>
+<p class="guestArtist">[出演] yama</a></p>
+
+<p class="attribute">レビュー：--件
+</p>
+<div class="icons"></div>
+<div class="icons"><span class="nomicon nomclip artist_bt_01"><a href="/clip" title="クリップする">0</a></span><span class="nomicon nomgone artist_bt_01"><a href="/clip" title="参加した" ">0</a></span></div><h6 class="rbnFes"><a href="/events/1959535" ><img src="https://static.livefans.jp/img/common/ribbonFes.png" alt="Fes" width="48" height="48"/></a></h6>
+</div>
+<div class="whiteBack midBox fes">
+<a href="/events/1932782" ><img src="https://i.scdn.co/image/ab67616100005174102509e6ae5000293ad834c5" alt="" width="120" height="120" /></a>
+<h3 class="artistName"><a href="/events/1932782" >Sign&#039;s Fest. 2026</a></h3>
+<p class="date">2026/06/28 (日) 16:05
+<br><span class="address">＠WHITE STAGE at 米子コンベンションセンター BiG SHiP (鳥取県)</span>
+</p>
+<p class="guestArtist">[出演] yama</a></p>
+
+<p class="attribute">レビュー：--件
+</p>
+<div class="icons"></div>
+<div class="icons"><span class="nomicon nomclip artist_bt_01"><a href="/clip" title="クリップする">0</a></span><span class="nomicon nomgone artist_bt_01"><a href="/clip" title="参加した" ">0</a></span></div><h6 class="rbnFes"><a href="/events/1932782" ><img src="https://static.livefans.jp/img/common/ribbonFes.png" alt="Fes" width="48" height="48"/></a></h6>
+</div>
+<div class="whiteBack midBox fes">
+<a href="/events/1893100" ><img src="https://i.scdn.co/image/ab67616100005174102509e6ae5000293ad834c5" alt="" width="120" height="120" /></a>
+<h3 class="artistName"><a href="/events/1893100" >TAKASAKI CITY ROCK FES.2026</a></h3>
+<p class="date">2026/06/27 (土) 16:50
+<br><span class="address">＠Gメッセ群馬 at TAKASAKI CITY ROCK FES.2026 会場[高崎芸術劇場 / Gメッセ群馬展示ホール / 高崎アリーナ / 高崎駅周辺] (群馬県)</span>
+</p>
+<p class="guestArtist">[出演] yama</a></p>
+
+<p class="attribute">レビュー：--件
+</p>
+<div class="icons"></div>
+<div class="icons"><span class="nomicon nomclip artist_bt_01"><a href="/clip" title="クリップする">0</a></span><span class="nomicon nomgone artist_bt_01"><a href="/clip" title="参加した" ">0</a></span></div><h6 class="rbnFes"><a href="/events/1893100" ><img src="https://static.livefans.jp/img/common/ribbonFes.png" alt="Fes" width="48" height="48"/></a></h6>
+</div>
+<div class="whiteBack midBox fes">
+<a href="/events/1935644" ><img src="https://i.scdn.co/image/ab67616100005174102509e6ae5000293ad834c5" alt="" width="120" height="120" /></a>
+<h3 class="artistName"><a href="/events/1935644" >CHAGU CHAGU ROCK FESTIVAL 2026</a></h3>
+<p class="date">2026/06/07 (日) 15:05
+<br><span class="address">＠ツガワ未来館アピオ 岩手産業文化センター 野外特設会場 (岩手県)</span>
+</p>
+<p class="guestArtist">[出演] yama</a></p>
+
+<p class="attribute">レビュー：--件
+</p>
+<div class="icons"></div>
+<div class="icons"><span class="nomicon nomclip artist_bt_01"><a href="/clip" title="クリップする">0</a></span><span class="nomicon nomgone artist_bt_01"><a href="/clip" title="参加した" ">0</a></span></div><h6 class="rbnFes"><a href="/events/1935644" ><img src="https://static.livefans.jp/img/common/ribbonFes.png" alt="Fes" width="48" height="48"/></a></h6>
+</div>
+<div class="whiteBack midBox ">
+<a href="/events/1882145" ><img src="https://i.scdn.co/image/ab67616100005174102509e6ae5000293ad834c5" alt="" width="120" height="120" /></a>
+<h3 class="artistName"><a href="/events/1882145" >yama C.U.Tリリースツアー &quot;羽化&quot;</a></h3>
+<p class="date">2026/05/31 (日) 18:00
+<br><span class="address">＠Zepp Haneda (東京都)</span>
+</p>
+<p class="guestArtist">[出演] yama</a></p>
+
+<p class="attribute">レビュー：1件
+</p>
+<div class="icons"><span class="ticon review"><a href="/events/1882145#attribute" >レビュー</a></span></div>
+<div class="icons"><span class="nomicon nomclip artist_bt_01"><a href="/clip" title="クリップする">2</a></span><span class="nomicon nomgone artist_bt_01"><a href="/clip" title="参加した" ">6</a></span></div>
+</div>
+<div class="whiteBack midBox ">
+<a href="/events/1882144" ><img src="https://i.scdn.co/image/ab67616100005174102509e6ae5000293ad834c5" alt="" width="120" height="120" /></a>
+<h3 class="artistName"><a href="/events/1882144" >yama C.U.Tリリースツアー &quot;羽化&quot;</a></h3>
+<p class="date">2026/05/24 (日) 17:00
+<br><span class="address">＠Zepp Nagoya (愛知県)</span>
+</p>
+<p class="guestArtist">[出演] yama</a></p>
+
+<p class="attribute">レビュー：--件
+</p>
+<div class="icons"></div>
+<div class="icons"><span class="nomicon nomclip artist_bt_01"><a href="/clip" title="クリップする">0</a></span><span class="nomicon nomgone artist_bt_01"><a href="/clip" title="参加した" ">1</a></span></div>
+</div>
+<div class="whiteBack midBox ">
+<a href="/events/1882143" ><img src="https://i.scdn.co/image/ab67616100005174102509e6ae5000293ad834c5" alt="" width="120" height="120" /></a>
+<h3 class="artistName"><a href="/events/1882143" >yama C.U.Tリリースツアー &quot;羽化&quot;</a></h3>
+<p class="date">2026/05/23 (土) 18:00
+<br><span class="address">＠Zepp Namba (大阪府)</span>
+</p>
+<p class="guestArtist">[出演] yama</a></p>
+
+<p class="attribute">レビュー：--件
+</p>
+<div class="icons"></div>
+<div class="icons"><span class="nomicon nomclip artist_bt_01"><a href="/clip" title="クリップする">1</a></span><span class="nomicon nomgone artist_bt_01"><a href="/clip" title="参加した" ">4</a></span></div>
+</div>
+<div class="whiteBack midBox ">
+<a href="/events/1882142" ><img src="https://i.scdn.co/image/ab67616100005174102509e6ae5000293ad834c5" alt="" width="120" height="120" /></a>
+<h3 class="artistName"><a href="/events/1882142" >yama C.U.Tリリースツアー &quot;羽化&quot;</a></h3>
+<p class="date">2026/05/16 (土) 18:00
+<br><span class="address">＠Zepp Fukuoka (福岡県)</span>
+</p>
+<p class="guestArtist">[出演] yama</a></p>
+
+<p class="attribute">レビュー：--件
+</p>
+<div class="icons"></div>
+<div class="icons"><span class="nomicon nomclip artist_bt_01"><a href="/clip" title="クリップする">0</a></span><span class="nomicon nomgone artist_bt_01"><a href="/clip" title="参加した" ">1</a></span></div>
+</div>
+<div class="whiteBack midBox ">
+<a href="/events/1882141" ><img src="https://i.scdn.co/image/ab67616100005174102509e6ae5000293ad834c5" alt="" width="120" height="120" /></a>
+<h3 class="artistName"><a href="/events/1882141" >yama C.U.Tリリースツアー &quot;羽化&quot;</a></h3>
+<p class="date">2026/05/10 (日) 17:00
+<br><span class="address">＠SENDAI GIGS (宮城県)</span>
+</p>
+<p class="guestArtist">[出演] yama</a></p>
+
+<p class="attribute">レビュー：--件
+</p>
+<div class="icons"></div>
+<div class="icons"><span class="nomicon nomclip artist_bt_01"><a href="/clip" title="クリップする">0</a></span><span class="nomicon nomgone artist_bt_01"><a href="/clip" title="参加した" ">0</a></span></div>
+</div>
+<div class="whiteBack midBox ">
+<a href="/events/1882140" ><img src="https://i.scdn.co/image/ab67616100005174102509e6ae5000293ad834c5" alt="" width="120" height="120" /></a>
+<h3 class="artistName"><a href="/events/1882140" >yama C.U.Tリリースツアー &quot;羽化&quot;</a></h3>
+<p class="date">2026/05/06 (水) 18:00
+<br><span class="address">＠Zepp Sapporo (北海道)</span>
+</p>
+<p class="guestArtist">[出演] yama</a></p>
+
+<p class="attribute">レビュー：--件
+</p>
+<div class="icons"><span class="ticon list"><a href="/events/1882140" >セットリスト</a></span></div>
+<div class="icons"><span class="nomicon nomclip artist_bt_01"><a href="/clip" title="クリップする">0</a></span><span class="nomicon nomgone artist_bt_01"><a href="/clip" title="参加した" ">2</a></span></div>
+</div>
+<div class="whiteBack midBox fes">
+<a href="/events/1894049" ><img src="https://i.scdn.co/image/ab67616100005174102509e6ae5000293ad834c5" alt="" width="120" height="120" /></a>
+<h3 class="artistName"><a href="/events/1894049" >EXtra SHOT ver.1</a></h3>
+<p class="date">2026/03/30 (月) 
+<br><span class="address">＠EX THEATER ROPPONGI (東京都)</span>
+</p>
+<p class="guestArtist">[出演] yama</a></p>
+
+<p class="attribute">レビュー：1件
+</p>
+<div class="icons"><span class="ticon list"><a href="/events/1894049" >セットリスト</a></span><span class="ticon review"><a href="/events/1894049#attribute" >レビュー</a></span></div>
+<div class="icons"><span class="nomicon nomclip artist_bt_01"><a href="/clip" title="クリップする">0</a></span><span class="nomicon nomgone artist_bt_01"><a href="/clip" title="参加した" ">3</a></span></div>
+</div>
+<div class="whiteBack midBox fes">
+<a href="/events/1918728" ><img src="https://i.scdn.co/image/ab67616100005174102509e6ae5000293ad834c5" alt="" width="120" height="120" /></a>
+<h3 class="artistName"><a href="/events/1918728" >Vポイント presents ツタロックフェス2026</a></h3>
+<p class="date">2026/03/22 (日) 15:00
+<br><span class="address">＠MASSIVE STAGE at 幕張メッセ 国際展示場 4～7ホール (千葉県)</span>
+</p>
+<p class="guestArtist">[出演] yama</a></p>
+
+<p class="attribute">レビュー：--件
+</p>
+<div class="icons"><span class="ticon list"><a href="/events/1918728" >セットリスト</a></span></div>
+<div class="icons"><span class="nomicon nomclip artist_bt_01"><a href="/clip" title="クリップする">0</a></span><span class="nomicon nomgone artist_bt_01"><a href="/clip" title="参加した" ">1</a></span></div><h6 class="rbnFes"><a href="/events/1918728" ><img src="https://static.livefans.jp/img/common/ribbonFes.png" alt="Fes" width="48" height="48"/></a></h6>
+</div><p class="pageNate">
+<span class="prev">≪Prev</span>｜<span class="current">1</span>｜<span><a href="/search/artist/141490/page:2?&amp;year=before&amp;sort=e1#schBox">2</a></span>｜<span><a href="/search/artist/141490/page:3?&amp;year=before&amp;sort=e1#schBox">3</a></span>｜<span><a href="/search/artist/141490/page:4?&amp;year=before&amp;sort=e1#schBox">4</a></span>｜<span><a href="/search/artist/141490/page:5?&amp;year=before&amp;sort=e1#schBox">5</a></span>｜…<span><a href="/search/artist/141490/page:11?&amp;year=before&amp;sort=e1#schBox" rel="last">11</a></span>｜<span class="next"><a href="/search/artist/141490/page:2?&amp;year=before&amp;sort=e1#schBox" rel="next">Next≫</a></span></p>
+</div>
+
+</div>	<!-- // CONTENT -->
+
+
+<!-- // jQuery -->
+<script type="text/javascript">
+
+</script>
+<!-- // jQuery -->
+
+<!-- // SIDE -->
+<div id="side"><!-- // sidemenu -->
+
+<div id="newsBox">
+<ul class="tab js-switch-side">
+<li class="active" data-id="newsContents">新着ニュース</li>
+<li data-id="liveContents">新着ライブレポート</li>
+</ul>
+<div id="newsContents" class="contents js-switch-side-contents" style="display: block;">
+<ul>
+<li><a href="https://www.livefans.jp/news/pc/64103" class="opalink" onclick=" sendActionLog('30','0', '7493c04dc9acbf7c45e7bcd816a8bb923510f91c', 'https://www.livefans.jp/', '0', '0', '0', '64103', '14' );  ga('send', 'event', '外部リンク', 'ニュース', 'Panorama Panama Town主催フェス『パナフェス2026 feat. COMING KOBE』 climbgrow、Benthamら最終出演者＆タイムテーブルを発表,https://www.livefans.jp/news/pc/64103');" ><div class="thumb"><img src="http://static.livefans.jp/img/contents/etc/202610/31124045_106_150.jpg" alt="" width="80" height="80"/></div><div class="info"><time>2026/10/31</time><h3 class="ttl">Panorama Panama Town主催フェス『パナフェス2026 feat. COMING KOBE』 climbgrow、Benthamら最終出演者＆タイムテーブルを発表</h3></div></a></li>
+<li><a href="https://www.livefans.jp/news/pc/64102" class="opalink" onclick=" sendActionLog('30','0', '7493c04dc9acbf7c45e7bcd816a8bb923510f91c', 'https://www.livefans.jp/', '0', '0', '0', '64102', '14' );  ga('send', 'event', '外部リンク', 'ニュース', 'Guiano、2027年6月に東名阪のクアトロをまわるワンマンツアー開催決定,https://www.livefans.jp/news/pc/64102');" ><div class="thumb"><img src="http://static.livefans.jp/img/contents/etc/202610/31123641_200_200.jpg" alt="" width="80" height="80"/></div><div class="info"><time>2026/10/31</time><h3 class="ttl">Guiano、2027年6月に東名阪のクアトロをまわるワンマンツアー開催決定</h3></div></a></li>
+<li><a href="https://www.livefans.jp/news/pc/64101" class="opalink" onclick=" sendActionLog('30','0', '7493c04dc9acbf7c45e7bcd816a8bb923510f91c', 'https://www.livefans.jp/', '0', '0', '0', '64101', '14' );  ga('send', 'event', '外部リンク', 'ニュース', 'Conton Candy、なきごと、yutoriが渋谷eggmanで共演　[NOiD]2027年1月に開催決定,https://www.livefans.jp/news/pc/64101');" ><div class="thumb"><img src="http://static.livefans.jp/img/contents/etc/202610/31123122_106_150.jpg" alt="" width="80" height="80"/></div><div class="info"><time>2026/10/31</time><h3 class="ttl">Conton Candy、なきごと、yutoriが渋谷eggmanで共演　[NOiD]2027年1月に開催決定</h3></div></a></li>
+<li><a href="https://www.livefans.jp/news/pc/64100" class="opalink" onclick=" sendActionLog('30','0', '7493c04dc9acbf7c45e7bcd816a8bb923510f91c', 'https://www.livefans.jp/', '0', '0', '0', '64100', '14' );  ga('send', 'event', '外部リンク', 'ニュース', '女王蜂、単独公演『アヴちゃん聖誕祭』を今年も開催,https://www.livefans.jp/news/pc/64100');" ><div class="thumb"><img src="http://static.livefans.jp/img/contents/etc/202610/31122716_200_200.jpg" alt="" width="80" height="80"/></div><div class="info"><time>2026/10/31</time><h3 class="ttl">女王蜂、単独公演『アヴちゃん聖誕祭』を今年も開催</h3></div></a></li>
+<li><a href="https://www.livefans.jp/news/pc/64092" class="opalink" onclick=" sendActionLog('30','0', '7493c04dc9acbf7c45e7bcd816a8bb923510f91c', 'https://www.livefans.jp/', '0', '0', '0', '64092', '14' );  ga('send', 'event', '外部リンク', 'ニュース', '下北沢9会場で開催される『over fest 2026』　全88アーティストのタイムテーブルを公開,https://www.livefans.jp/news/pc/64092');" ><div class="thumb"><img src="http://static.livefans.jp/img/contents/etc/202610/30102150_107_150.jpg" alt="" width="80" height="80"/></div><div class="info"><time>2026/10/30</time><h3 class="ttl">下北沢9会場で開催される『over fest 2026』　全88アーティストのタイムテーブルを公開</h3></div></a></li>
+<li><div class="moreBtn"><a href="/news">もっと見る</a></div></li>
+</ul></div>
+<div id="liveContents" class="contents js-switch-side-contents hide" style="display: none;">
+<ul>
+<li><a href="https://www.livefans.jp/report/pc/64104" class="opalink" onclick=" sendActionLog('30','0', '7493c04dc9acbf7c45e7bcd816a8bb923510f91c', 'https://www.livefans.jp/', '0', '0', '0', '64104', '14' );  ga('send', 'event', '外部リンク', 'ライブレポート', 'Ms.OOJA「今日、1人1人があたらしい自分になったと思う」ファンと刻んだ15周年の集大成ライブーー『Ms.OOOOOJA! 〜あたらしい景色をみにいこう〜』レポート,https://www.livefans.jp/report/pc/64104');" ><div class="thumb"><img src="http://static.livefans.jp/img/contents/etc/202610/31135447_200_133.jpg" alt="" width="80" height="80"/></div><div class="info"><time>2026/10/31</time><h3 class="ttl">Ms.OOJA「今日、1人1人があたらしい自分になったと思う」ファンと刻んだ15周年の集大成ライブーー『Ms.OOOOOJA! 〜あたらしい景色をみにいこう〜』レポート</h3></div></a></li>
+<li><a href="https://www.livefans.jp/report/pc/64099" class="opalink" onclick=" sendActionLog('30','0', '7493c04dc9acbf7c45e7bcd816a8bb923510f91c', 'https://www.livefans.jp/', '0', '0', '0', '64099', '14' );  ga('send', 'event', '外部リンク', 'ライブレポート', '黒木渚、全国ツアー『神様イン・ザ・トートバック』が閉幕　ファイナル公演のオフィシャルレポートが到着,https://www.livefans.jp/report/pc/64099');" ><div class="thumb"><img src="http://static.livefans.jp/img/contents/etc/202610/31122404_200_133.jpg" alt="" width="80" height="80"/></div><div class="info"><time>2026/10/31</time><h3 class="ttl">黒木渚、全国ツアー『神様イン・ザ・トートバック』が閉幕　ファイナル公演のオフィシャルレポートが到着</h3></div></a></li>
+<li><a href="https://www.livefans.jp/report/pc/64098" class="opalink" onclick=" sendActionLog('30','0', '7493c04dc9acbf7c45e7bcd816a8bb923510f91c', 'https://www.livefans.jp/', '0', '0', '0', '64098', '14' );  ga('send', 'event', '外部リンク', 'ライブレポート', 'Ave Mujica、演奏に没頭する5人から目が離せない――音と光に心を奪われた「Virtus」DAY1レポート,https://www.livefans.jp/report/pc/64098');" ><div class="thumb"><img src="http://static.livefans.jp/img/contents/etc/202610/31121403_200_133.jpg" alt="" width="80" height="80"/></div><div class="info"><time>2026/10/31</time><h3 class="ttl">Ave Mujica、演奏に没頭する5人から目が離せない――音と光に心を奪われた「Virtus」DAY1レポート</h3></div></a></li>
+<li><a href="https://www.livefans.jp/report/pc/64097" class="opalink" onclick=" sendActionLog('30','0', '7493c04dc9acbf7c45e7bcd816a8bb923510f91c', 'https://www.livefans.jp/', '0', '0', '0', '64097', '14' );  ga('send', 'event', '外部リンク', 'ライブレポート', '生まれ変わり、大きな進化を遂げた『イナズマ』――西川貴教主催、滋賀『FEST. INAZUMA』初日、GENERATIONS、MAZZEL、ももいろクローバーZらが饗宴,https://www.livefans.jp/report/pc/64097');" ><div class="thumb"><img src="http://static.livefans.jp/img/contents/etc/202610/30190947_200_133.jpg" alt="" width="80" height="80"/></div><div class="info"><time>2026/10/30</time><h3 class="ttl">生まれ変わり、大きな進化を遂げた『イナズマ』――西川貴教主催、滋賀『FEST. INAZUMA』初日、GENERATIONS、MAZZEL、ももいろクローバーZらが饗宴</h3></div></a></li>
+<li><a href="https://www.livefans.jp/report/pc/64096" class="opalink" onclick=" sendActionLog('30','0', '7493c04dc9acbf7c45e7bcd816a8bb923510f91c', 'https://www.livefans.jp/', '0', '0', '0', '64096', '14' );  ga('send', 'event', '外部リンク', 'ライブレポート', '滋賀の西川貴教主催『FEST. INAZUMA』、3日間の奇跡が最終日で大いに爆ぜる――T.M.Revolution、abingdon boys school、MONGOL800、Novelbrightらが集結,https://www.livefans.jp/report/pc/64096');" ><div class="thumb"><img src="http://static.livefans.jp/img/contents/etc/202610/30184142_200_133.jpg" alt="" width="80" height="80"/></div><div class="info"><time>2026/10/30</time><h3 class="ttl">滋賀の西川貴教主催『FEST. INAZUMA』、3日間の奇跡が最終日で大いに爆ぜる――T.M.Revolution、abingdon boys school、MONGOL800、Novelbrightらが集結</h3></div></a></li>
+<li><div class="moreBtn"><a href="/report">もっと見る</a></div></li>
+</ul></div></div>
+<div id="matomeBox">
+<h3 class="ttlSide"><span>編集部</span></h3>
+<div class="contents">
+<ul>
+<li><a href="https://www.livefans.jp/articles/63626" class="opalink" onclick=" sendActionLog('15','0', '7493c04dc9acbf7c45e7bcd816a8bb923510f91c', 'https://www.livefans.jp/', '0', '0', '0', '0', '0' );  ga('send', 'event', '外部リンク', 'まとめ', '≪LiveFans調べ≫2026年 上半期ライブ動員ランキング！,https://www.livefans.jp/articles/63626');" ><div class="thumb"><img src="http://static.livefans.jp/img/contents/etc/202607/27105229_300_300.jpg" width="80" height="80" /></div><div class="info"><h3 class="ttl">≪LiveFans調べ≫2026年 上半期ライブ動員ランキング！</h3><p class="desc">【LiveFans独自ランキング】2026年上半期、ライブの動員数が多かったのは…！？</p></div></a></li>
+<li><a href="https://www.livefans.jp/articles/62716" class="opalink" onclick=" sendActionLog('15','0', '7493c04dc9acbf7c45e7bcd816a8bb923510f91c', 'https://www.livefans.jp/', '0', '0', '0', '0', '0' );  ga('send', 'event', '外部リンク', 'まとめ', '≪LiveFans調べ≫2025年 年間ライブ動員ランキング！,https://www.livefans.jp/articles/62716');" ><div class="thumb"><img src="http://static.livefans.jp/img/contents/etc/202601/23180630_300_300.jpg" width="80" height="80" /></div><div class="info"><h3 class="ttl">≪LiveFans調べ≫2025年 年間ライブ動員ランキング！</h3><p class="desc">【LiveFans独自ランキング】2025年、ライブの動員数が多かったのは…！？</p></div></a></li>
+<li><a href="https://www.livefans.jp/articles/61842" class="opalink" onclick=" sendActionLog('15','0', '7493c04dc9acbf7c45e7bcd816a8bb923510f91c', 'https://www.livefans.jp/', '0', '0', '0', '0', '0' );  ga('send', 'event', '外部リンク', 'まとめ', '≪LiveFans調べ≫2025年 上半期ライブ動員ランキング！,https://www.livefans.jp/articles/61842');" ><div class="thumb"><img src="http://static.livefans.jp/img/contents/etc/202507/16121233_300_300.jpg" width="80" height="80" /></div><div class="info"><h3 class="ttl">≪LiveFans調べ≫2025年 上半期ライブ動員ランキング！</h3><p class="desc">【LiveFans独自ランキング】2025年上半期、ライブの動員数が多かったのは…！？</p></div></a></li>
+<li><div class="moreBtn"><a href="/matome">もっと見る</a></div></li>
+</ul>
+</div>
+</div>
+<div id="bannerSideMiddle" class="bannerBox">
+<!-- /9176203,104311091/1601953 -->
+<div id='dfp-banner-27-0' class='adCenter' style='height:600px; width:300px;'>
+<script>
+googletag.cmd.push(function() { googletag.display('dfp-banner-27-0'); });
+</script>
+</div>
+</div>
+<div id="bannerSideBottom" class="bannerBox">
+<!-- /9176203,104311091/1601954 -->
+<div id='dfp-banner-28-0' class='adCenter' style='height:600px; width:300px;'>
+<script>
+googletag.cmd.push(function() { googletag.display('dfp-banner-28-0'); });
+</script>
+</div>
+</div>
+<div id="tenbaiBox">
+<a href="https://www.tenbai-no.jp/" onclick="  sendActionLog('15','0', '7493c04dc9acbf7c45e7bcd816a8bb923510f91c', 'https://www.livefans.jp/', '0', '0', '0', '0', '0' );  ga('send', 'event', 'バナークリック', 'チケット転売NO', 'https://www.tenbai-no.jp/');" target="new"><img src="https://static.livefans.jp/img/data/ticket_310.jpg" alt="バナー" width="300"/></a>
+</div></div><!-- // sidemenu -->
+<!-- // SIDE -->
+
+</div>
+<!-- // CONTAINER -->
+
+<!-- Info Popup -->
+
+<script type="text/javascript">
+	if($('#dialog').length){
+		$(function(){
+		    $('#dialog').jqm();
+		    $('#dialog').jqmShow();//modalウインドウを表示する
+		    $(window).load(function(){
+		    })
+		});
+	}
+
+// NARROWSEARCH TL
+//jQuery('.typeFes').not('#type00').addClass('hide');
+jQuery(document).on('change','#typeLive',function(){
+	jQuery('.typeFes').addClass('hide');
+	jQuery('#' + jQuery('#typeLive option:selected').attr('class')).removeClass('hide');
+	jQuery('.typeFes').not('#' + jQuery('#typeLive option:selected').attr('class')).val('');
+});
+jQuery(document).on('click','.memoBox > dl dt a.btnMemo',function(){
+	jQuery(this).parents('dl').hide();
+	jQuery('form'+jQuery(this).attr('href')).show();
+	return false;
+});
+jQuery(document).on('click','dt a.btnCncl',function(){
+	jQuery('form'+jQuery(this).attr('href')).hide();
+	jQuery('form'+jQuery(this).attr('href')).siblings('dl').show();
+	return false;
+});
+
+</script>
+
+
+
+<!-- // FOOTER BANNER -->
+
+<div id="footerBanner">
+<ul class="smallBanner">
+</ul></div><!-- // FOOTER BANNER -->
+
+</div>
+<!-- // WRAP -->
+
+
+
+<!-- // FOOTER -->
+<div id="footer">
+<div class="inner">
+<p class="goTop"><a href="#wrap">Page Top↑</a></p>
+<!-- <h5><a href="/"><img src="/img/common/footLogo.png?update=20160401" alt="LiveFans フッターロゴ" width="176" height="59"/></a></h5> -->
+<div class="footerLf">
+<ul>
+<li><a href="/setlist">セットリスト情報</a></li>
+<!--<li><a href="/live">ライブ・フェス情報</a></li>-->
+<li><a href="/artist">アーティスト一覧</a></li>
+<li><a href="/users/login">ユーザー登録</a></li>
+<li><a href="/events">新規情報投稿</a></li>
+</ul>
+<ul>
+<li><a href="/first">初めての方</a></li>
+<li><a href="/guide">投稿のガイドライン</a></li>
+<li><a href="/help">ヘルプ</a></li>
+<li><a href="/contact/10">お問い合わせ</a></li>
+</ul>
+<ul>
+<li><a href="/terms">利用規約</a></li>
+<li><a href="/privacy">プライバシーポリシー</a></li>
+<li><a href="/company">運営会社</a></li>
+<li><a href="/news/info/list">お知らせ</a></li>
+</ul>
+<ul>
+<li><a href="/contact/21">アーティスト・公演主催者の方へ</a></li>
+</ul>
+
+</div>
+<div class="footerRt">
+<ul class="snsNav"><li><a href="https://x.com/livefans" target="_blank" onClick="ga('send', 'event', '外部リンク', '公式SNSリンククリック', 'yamaのライブ・コンサート | LiveFans(ライブファンズ),https://www.livefans.jp/search/artist/141490?year=before&amp;sort=e1,フッター,twitter');"><img src="https://static.livefans.jp/img/common/sns/icon-X.svg" alt="twitter" height="32" width="32"/></a></li><li><a href="https://www.facebook.com/livefans" target="_blank" onClick="ga('send', 'event', '外部リンク', '公式SNSリンククリック', 'yamaのライブ・コンサート | LiveFans(ライブファンズ),https://www.livefans.jp/search/artist/141490?year=before&amp;sort=e1,フッター,facebook');"><img src="https://static.livefans.jp/img/common/sns/icon-facebook.svg" alt="facebook" height="32" width="32"/></a></li><li><a href="https://www.youtube.com/channel/UCfH5b3DhV7AL-p0yX_zizTA" target="_blank" onClick="ga('send', 'event', '外部リンク', '公式SNSリンククリック', 'yamaのライブ・コンサート | LiveFans(ライブファンズ),https://www.livefans.jp/search/artist/141490?year=before&amp;sort=e1,フッター,youtube');"><img src="https://static.livefans.jp/img/common/sns/icon-youtube.svg" alt="youtubeチャンネル" height="32" width="32"/></a></li><li><a href="https://open.spotify.com/user/nb3gnvy7qphzbzt8zgeiw4tms?si=-yqPoMdkThSm89_7Adk5tg" target="_blank" onClick="ga('send', 'event', '外部リンク', '公式SNSリンククリック', 'yamaのライブ・コンサート | LiveFans(ライブファンズ),https://www.livefans.jp/search/artist/141490?year=before&amp;sort=e1,フッター,spotify');"><img src="https://static.livefans.jp/img/common/sns/icon-spotify.png" alt="spotify" height="32" width="32"/></a></li></ul><ul class="appBanner">
+<li><a href="https://play.google.com/store/apps/details?id=jp.livefans.player" onclick=" sendActionLog('15','0', '7493c04dc9acbf7c45e7bcd816a8bb923510f91c', 'https://www.livefans.jp/', '0', '0', '0', '0', '0' );  "><img src="https://static.livefans.jp/img/common/banner-app02.jpg" alt="LiveFansアプリ" width="180" height="70"/></a></li>
+<li><a href="https://go.livefans.jp/app" onclick=" sendActionLog('15','0', '7493c04dc9acbf7c45e7bcd816a8bb923510f91c', 'https://www.livefans.jp/', '0', '0', '0', '0', '0' );  ga('send', 'event', '外部リンク', 'アプリストアリンク', 'ライブへGO アプリ For iPhone AppStore,https://go.livefans.jp/app,グローバルフッター,/search/artist/141490');"><img src="https://static.livefans.jp/img/common/banner-app01.jpg" alt="ライブへGO!アプリ" width="180" height="70"/></a></li></ul></div>
+</div>
+<p id="copy">Copyright (C) 2021- SKIYAKI Inc. All Rights Reserved. <br />JASRAC許諾番号：9022255001Y45037</p>
+</div>
+<!-- // FOOTER -->
+
+<!--.13-->
+<script type="text/javascript">
+var layzr = new Layzr();
+</script>
+
+
+
+
+<div id="fb-root"></div>
+				<script async>(function(d, s, id) {
+				  var js, fjs = d.getElementsByTagName(s)[0];
+				  if (d.getElementById(id)) return;
+				  js = d.createElement(s); js.id = id; js.async = true;
+				  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&appId=528283240567901&version=v2.8";
+				  fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));
+				</script><script>
+			!function(d,s,id){
+				var js,fjs=d.getElementsByTagName(s)[0];
+				if(!d.getElementById(id)){
+					js=d.createElement(s);
+					js.id=id;
+					js.src="//platform.twitter.com/widgets.js";
+					js.async = true;
+					fjs.parentNode.insertBefore(js,fjs);
+				}
+			}(document,"script","twitter-wjs");
+			</script>
+
+
+
+<!--.13-->
+
+
+
+
+
+<script>
+jQuery(document).on('click','#popupOverlay, #popupInfo p.btn + a',function(){
+	jQuery('#popupInfo').fadeOut();
+	jQuery('#popupOverlay').remove();
+	return false;
+});
+
+var popup = document.getElementById("popupInfo");
+if( popup ){
+	jQuery('body').append('<div id="popupOverlay"></div>');
+	jQuery('#popupOverlay').fadeIn('fast');
+}
+</script>
+
 
 </body>
 </html>
