@@ -296,7 +296,7 @@ h1{font-size:26px;line-height:1.4;margin:0 0 8px}h2{font-size:20px;margin:0 0 12
 .yr{margin:24px 0 8px;font-size:22px}.yr a{color:var(--ink);text-decoration:none}.yr:first-child{margin-top:0}
 .tl{list-style:none;margin:0;padding:0;border-left:3px solid var(--line);margin-left:6px}
 .ev{position:relative;padding:4px 0 14px 18px;display:grid;grid-template-columns:120px 1fr;gap:10px}
-.ev:before{content:"";position:absolute;left:-8px;top:12px;width:13px;height:13px;border-radius:50%;background:var(--card);border:3px solid var(--line)}
+.ev:before{content:"";position:absolute;box-sizing:border-box;left:-10px;top:10px;width:17px;height:17px;border-radius:50%;background:var(--card);border:3px solid var(--line)}
 .ev.big:before{background:var(--yl);border-color:var(--ac2)}
 .ev .dt{font-size:13.5px;color:var(--sub);font-weight:700;padding-top:2px}
 .ev h3{margin:2px 0 0;font-size:16.5px;line-height:1.5}.ev.big h3{color:var(--ac2)}.ev p{margin:2px 0 0;font-size:14.5px;color:var(--sub)}
